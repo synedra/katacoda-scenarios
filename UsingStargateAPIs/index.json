@@ -1,6 +1,6 @@
 {
-  "title": "Stargate APIs with Node",
-  "description": "Learn to use the Stargate APIs using a Node.js library to interact with your Cassandra Database",
+  "title": "C* Made Easy: Harnessing Stargate APIs with Node.js",
+  "description": "We'll give a quick overview of Cassandra, Astra and Stargate, then we'll get going - creating an instance, storing your credentials, exploring the various APIs, and then we'll dive into using our Node.js library to see it working in a simple application.",
   "difficulty": "Beginner",
   "time": "2 hours",
   "details": {
@@ -57,6 +57,6 @@
     "uilayout": "editor-terminal"
   },
   "backend": {
-    "imageid": "ubuntu:2004"
+    "imageid": "ubuntu:latest"
   }
 }
