@@ -16,7 +16,7 @@ One of the first things we need to do is hook up the "plumbing" of our applicati
 
 We will be making use of the Document API and REST API to connect to our **Astra** database. The **Stargate** API framework allows developers the freedom to access **Astra** with a variety of APIs.  The REST and GraphQL APIs make it easy to interact with standard Cassandra databases. **With the Document API, you can save and search schemaless JSON documents in Cassandra**. No need to use SQL, CQL, or any database drivers to talk to the data layer. Just code and move on.
 
-_ehem...for those of you familiar with Apache Cassandra, yes, I just said you could skip data modeling._
+_ahem...for those of you familiar with Apache Cassandra, yes, I just said you could skip data modeling._
 
 ![Document API Flow](https://github.com/DataStax-Examples/battlestax/blob/master/tutorial/document-api.png?raw=true)
 
@@ -24,7 +24,7 @@ _ehem...for those of you familiar with Apache Cassandra, yes, I just said you co
 
 The `ASTRA` service is available at url [https://astra.datastax.com](https://dtsx.io/workshop). `ASTRA` is the simplest way to run Cassandra with zero operations at all - just push the button and get your cluster. `Astra` offers $25 credit/month and requires no credit card to setup.  That $25 gives you a lot of storage space and transactions, and you have no worries of being accidentally charged.
 
-### ✅ Step 1a. Use the dialogs to create and account and/or sign in
+### ✅ Step 1a. Use the dialogs to create an account and/or sign in
 You can use your `Github`, `Google` accounts or register with an `email`.
 
 Make sure to chose a password with minimum 8 characters, containing upper and lowercase letters, at least one number and special character
