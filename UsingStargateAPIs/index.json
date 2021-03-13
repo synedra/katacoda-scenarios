@@ -57,6 +57,6 @@
     "uilayout": "editor-terminal"
   },
   "backend": {
-    "imageid": "ubuntu:latest"
+    "imageid": "ubuntu:2004"
   }
 }
