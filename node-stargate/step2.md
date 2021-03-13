@@ -15,10 +15,31 @@ HTTPie is an excellent API CLI tool, which we've extended to understand the astr
 
 ## 2. Set Up Credentials
 
-### ✅ Step 1a: Go back to the [**Astra** UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.
+### ✅ Step 1: Get the script to set up your environment
+
+`wget https://raw.githubusercontent.com/DataStax-Examples/battlestax/master/env.sh`{{execute}}
+
+### ✅ Step 2: Go back to the [**Astra** UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.
 
 ![image](https://user-images.githubusercontent.com/77410784/110701039-853ebb80-81a5-11eb-8a5f-1d6801932321.png)
 
 This will bring you to the `Connect` page.
 
+Scroll down to the configuration block on the right hand side, and click the icon at the top right to copy.
+![image](https://user-images.githubusercontent.com/77410784/111052773-e3240b00-8412-11eb-9129-82f6433580f8.png)
 
+### ✅ Step 3: Paste your credentials into the env.sh script
+
+`env.sh`{{execute}}
+
+Paste in the block from the "connect" screen.
+
+When it asks for your token, leave that window and back in the Astra window select the "Settings" tab.
+
+### ✅ Step 4: Retrieve and paste your application token
+
+![image]("https://user-images.githubusercontent.com/77410784/111052843-97be2c80-8413-11eb-9ce3-17ea13014b76.png)
+
+Set the "Select Role" dropdown to API Admin, and copy the token from the resulting popup.
+
+In the katacoda environment, paste the token to finish setting your credentials.
