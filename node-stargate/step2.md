@@ -8,12 +8,12 @@ In this step, we will:
 
 ---
 
-**1. Install HTTPie**
+# 1. Install HTTPie
 HTTPie is an excellent API CLI tool, which we've extended to understand the astra authentication model.  
 
 `pip3 install httpie-astra`{{execute}}
 
-**2. Set Up Credentials**
+## 2. Set Up Credentials
 
 **✅ Step 1: Get the script to set up your environment**
 
@@ -45,7 +45,7 @@ Set the "Select Role" dropdown to API Admin, and copy the token from the resulti
 
 In the katacoda environment, paste the token to finish setting your credentials.
 
-**✅ Step 5: Validate your credentials with httpie**
+## 3. Verify Credentials
 
 Make a call to the API using httpie to make sure your credentials are working:
 
