@@ -19,7 +19,7 @@ HTTPie is an excellent API CLI tool, which we've extended to understand the astr
 
 `wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/env.sh`{{execute}}
 
-**✅ Step 2: Go back to the [**Astra** UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.**
+**✅ Step 2: Go back to the [Astra UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.**
 
 ![image](https://user-images.githubusercontent.com/77410784/110701039-853ebb80-81a5-11eb-8a5f-1d6801932321.png)
 
@@ -49,14 +49,20 @@ In the katacoda environment, paste the token to finish setting your credentials.
 
 Make a call to the API using httpie to make sure your credentials are working:
 
-`http --auth-type astra -a default: :/rest/v21keyspaces`{{execute}}
+`http --auth-type astra -a default: :/rest/v1/keyspaces`{{execute}}
 
-Pretty cool, right?  Let's configure httpie to work exactly how we want, so we don't have to specify the auth-type and .astrarc section.
+Pretty cool, right?  Let's configure httpie to work exactly how you want, you we don't have to specify the auth-type and .astrarc section.
 
-First, we'll create the directory for the configuration file:
+First, you'll create the directory for the configuration file:
 
 `mkdir -p ~/.config/httpie`{{execute}}
 
 Now, download the config file:
 
-`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/config.json -o ~/.config/httpie/config.json`{{execute}}
+`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/config.json -O ~/.config/httpie/config.json`{{execute}}
+
+Try the simpler call to make sure it works:
+
+`http :/rest/v1/keyspaces`{{execute}}
+
+Great, it's time to dive deeper into the Stargate APIs to see what they can do for you.
