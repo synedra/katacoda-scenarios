@@ -31,7 +31,7 @@ Scroll down to the configuration block on the right hand side, and click the ico
 **✅ Step 3: Paste your credentials into the env.sh script**
 
 Run the environment variable script:
-`bash env.sh`{{execute}}
+`clear; bash env.sh`{{execute}}
 
 Paste in the block from the "connect" screen.
 
