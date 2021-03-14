@@ -1,13 +1,12 @@
 # Exploring Stargate APIs from the command line
 
-In this section you will use our httpie configuration to take a look at the Stargate APIs.
+In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the REST API
 
-* [Create a Table](1.-create-a-table)
-* Add some rows
-* Find the rows
-* Update the rows
-* Delete the rows
-* Delete the table.
+* [REST - Create a Table](1.-create-a-table)
+* [REST - Add some rows](2.-add-some-rows)
+* [REST - Find the rows](3.-find-the-rows)
+* [REST - Delete the rows](4.-delete-the-rows)
+* [REST - Delete the table](5.-delete-the-table)
 
 ### 1. Create a table**
 
