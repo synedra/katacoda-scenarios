@@ -17,7 +17,7 @@ HTTPie is an excellent API CLI tool, which we've extended to understand the astr
 
 ### ✅ Step 1: Get the script to set up your environment
 
-`wget https://raw.githubusercontent.com/DataStax-Examples/battlestax/master/env.sh`{{execute}}
+`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/env.sh`{{execute}}
 
 ### ✅ Step 2: Go back to the [**Astra** UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.
 
