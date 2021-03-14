@@ -39,7 +39,9 @@ When it asks for your token, leave that window and back in the Astra window sele
 
 ### ✅ Step 4: Retrieve and paste your application token
 
-![image]("https://user-images.githubusercontent.com/77410784/111052843-97be2c80-8413-11eb-9ce3-17ea13014b76.png)
+Click the "Settings tab" for your database.
+
+![image]("https://user-images.githubusercontent.com/77410784/111053372-1f0d9f00-8418-11eb-96db-5ad2a5a4b2bc.png")
 
 Set the "Select Role" dropdown to API Admin, and copy the token from the resulting popup.
 
