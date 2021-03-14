@@ -30,10 +30,8 @@ Scroll down to the configuration block on the right hand side, and click the ico
 
 ### ✅ Step 3: Paste your credentials into the env.sh script
 
-Get the env.sh script:
-`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/env.sh`{{execute}}
-
-`env.sh`{{execute}}
+Run the environment variable script:
+`bash env.sh`{{execute}}
 
 Paste in the block from the "connect" screen.
 
