@@ -46,3 +46,19 @@ Click the "Settings tab" for your database.
 Set the "Select Role" dropdown to API Admin, and copy the token from the resulting popup.
 
 In the katacoda environment, paste the token to finish setting your credentials.
+
+### ✅ Step 5: Validate your credentials with httpie
+
+Make a call to the API using httpie to make sure your credentials are working:
+
+`http --auth-type astra -a default: :/rest/v2/keyspaces`{{execute}}
+
+Pretty cool, right?  Let's configure httpie to work exactly how we want, so we don't have to specify the auth-type and .astrarc section.
+
+First, we'll create the directory for the configuration file:
+
+`mkdir -p ~/.config/httpie`{{execute}}
+
+Now, download the config file:
+
+`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/config.json -o ~/.config/httpie/config.json`{{execute}}
