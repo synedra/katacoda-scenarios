@@ -67,5 +67,14 @@ Check to make sure they're really in there:
 
 `http PUT :/rest/v2/keyspaces/workshop/cavemen/Flintstone/Fred json:='
 { "occupation": "Quarry Screamer"}'`{{execute}}
+
+Check our work:
+`http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
+
 ## 4. Delete the rows
+
+Barney's not really adding a lot of value.  Let's kick him out:
+`http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
 ## 5. Delete the table
+
+`http DELETE :/rest/v2/keyspaces/workshop/cavemen`{{execute}}
