@@ -85,3 +85,5 @@ So wait, is he gone?
 We don't need our table anymore, let's delete it.
 
 `http DELETE :/rest/v2/schemas/keyspaces/workshop/tables/cavemen`{{execute}}
+
+Now you can move on and check out the GraphQL API.
