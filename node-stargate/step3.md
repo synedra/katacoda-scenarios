@@ -12,7 +12,7 @@ In this section you will use our httpie configuration to take a look at the Star
 
 The first thing that needs to happen is to create a table.  HTTPie will handle the authentication and create the right server based on your .astrarc file, but you'll need to make sure and use that "Workshop" keyspace.
 
-`http POST :/rest/v2/schemas/keyspaces/Workshop/tables json:='{
+`http POST :/rest/v2/schemas/keyspaces/workshop/tables json:='{
   "name": "cavemen",
   "ifNotExists": false,
   "columnDefinitions": [
@@ -39,7 +39,7 @@ The first thing that needs to happen is to create a table.  HTTPie will handle t
 
 Just to be sure, go ahead and ask for a listing of the tables in the Workshop keyspace:
 
-`http :/rest/v2/schemas/keyspaces/Workshop/tables`{{execute}}
+`http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
 
 ## 2. Add some rows
 Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a few different rows with that data.
@@ -50,6 +50,14 @@ Great!  The table is created.  But it's kind of dull with no data.  Since it's l
             "lastname": "Flintstone"
 }'`{{execute}}
 
+`http POST :/rest/v2/keyspaces/workshop/cavemen json:='
+{
+            "firstname" : "Barney",
+            "lastname": "Rubble"
+}'`{{execute}}
+
+Check to make sure they're really in there:
+`http :/rest/v2/keyspaces/workshop/cavemen where='{"firstname":$exists}'`{{execute}}
 
 ## 3. Find the rows
 ## 4. Delete the rows
