@@ -12,23 +12,16 @@ In this section you will use our httpie configuration to take a look at the Star
 
 The first thing that needs to happen is to create a table.  HTTPie will handle the authentication and create the right server based on your .astrarc file, but you'll need to make sure and use that "Workshop" keyspace.
 
-`http POST :/graphql/workshop query='{
-mutation createTables {
-  cavemen: createTable(
-    keyspaceName:"workshop",
-    tableName:"cavemen",
-    partitionKeys: [ # The keys required to access your data
-      { name: "lastname", type: {basic: TEXT} }
-    ]
-    clusteringKeys: [
-      { name: "firstname", type: {basic: TEXT} }
-    ]
-  )
-}'`{{execute}}
+`http POST :/graphql-schema query='mutation createTables {
+    cavemen: createTable(
+        keyspaceName: "workshop", 
+        tableName: "cavemen", 
+        partitionKeys: [{name: "lastname", type: {basic: TEXT}}], clusteringKeys: [{name: "firstname", type: {basic: TEXT}}])}'
+        `{{execute}}
 
 Just to be sure, go ahead and ask for a listing of the tables in the Workshop keyspace:
 
-`http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
+`http POST :/graphql/workshop`{{execute}}
 
 ## 2. Add some rows
 Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a few different rows with that data.
