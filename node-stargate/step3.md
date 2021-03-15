@@ -25,7 +25,11 @@ The first thing that needs to happen is to create a table.  HTTPie will handle t
       "name": "lastname",
       "typeDefinition": "text",
       "static": false
-    }
+    },
+        {
+	      "name": "occupation",
+	      "typeDefinition": "text"
+	    }
   ],
   "primaryKey": {
     "partitionKey": [
@@ -61,7 +65,7 @@ Check to make sure they're really in there:
 
 ## 3. Update the rows
 
-`http PUT :/rest/v2/keyspaces/workshop/cavemen/Flinstone/Fred json:='
-{ "firstname":"Wilma"}'`{{execute}}
+`http PUT :/rest/v2/keyspaces/workshop/cavemen/Flintstone/Fred json:='
+{ "firstname":"Wilma", "lastname":"Flintstone"}'`{{execute}}
 ## 4. Delete the rows
 ## 5. Delete the table
