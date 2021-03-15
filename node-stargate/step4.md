@@ -12,16 +12,6 @@ In this section you will use our httpie configuration to take a look at the Star
 
 The first thing that needs to happen is to create a table.  HTTPie will handle the authentication and create the right server based on your .astrarc file, but you'll need to make sure and use that "Workshop" keyspace.
 
-
-$ http POST :/graphql/workshop query='query cavemen {
-    cavemen (value: {lastname:"Flintstone"}) {
-      values {
-      firstname
-        lastname
-      }
-    }
-}'
-
 `http POST :/graphql/workshop query='{
 mutation createTables {
   cavemen: createTable(
