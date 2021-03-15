@@ -74,11 +74,11 @@ Check our work:
 ## 4. Delete the rows
 
 Barney's not really adding a lot of value.  Let's kick him out:
-`http DELETE :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney'`{{execute}}
+`http DELETE :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney`{{execute}}
 
 So wait, is he gone?
 
-`http :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney'`{{execute}}
+`http :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney`{{execute}}
 
 ## 5. Delete the table
 
