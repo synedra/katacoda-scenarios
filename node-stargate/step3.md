@@ -1,4 +1,4 @@
-# Exploring Stargate APIs from the command line
+# Exploring Stargate APIs from the command line - REST
 
 In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the REST API
 
