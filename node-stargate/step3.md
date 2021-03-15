@@ -74,7 +74,7 @@ Check our work:
 ## 4. Delete the rows
 
 Barney's not really adding a lot of value.  Let's kick him out:
-`http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
+`http :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney'`{{execute}}
 ## 5. Delete the table
 
-`http DELETE :/rest/v2/keyspaces/workshop/cavemen`{{execute}}
+`http DELETE :/rest/v2/schemas/keyspaces/workshop/tables/cavemen`{{execute}}
