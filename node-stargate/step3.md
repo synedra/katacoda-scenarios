@@ -4,7 +4,7 @@ In this section you will use our httpie configuration to take a look at the Star
 
 * [REST - Create a Table](#1.-create-a-table)
 * [REST - Add some rows](#2.-add-some-rows)
-* [REST - Find the rows](#3.-find-the-rows)
+* [REST - Update the rows](#3.-update-the-rows)
 * [REST - Delete the rows](#4.-delete-the-rows)
 * [REST - Delete the table](#5.-delete-the-table)
 
@@ -44,7 +44,7 @@ Just to be sure, go ahead and ask for a listing of the tables in the Workshop ke
 ## 2. Add some rows
 Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a few different rows with that data.
 
-`http POST :/rest/v2/keyspaces/Workshop/cavemen json:='
+`http POST :/rest/v2/keyspaces/workshop/cavemen json:='
 {
             "firstname" : "Fred",
             "lastname": "Flintstone"
@@ -57,8 +57,11 @@ Great!  The table is created.  But it's kind of dull with no data.  Since it's l
 }'`{{execute}}
 
 Check to make sure they're really in there:
-`http :/rest/v2/keyspaces/workshop/cavemen where='{"firstname":$exists}'`{{execute}}
+`http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
 
-## 3. Find the rows
+## 3. Update the rows
+
+`http PUT :/rest/v2/keyspaces/workshop/cavemen/Flinstone/Fred json:='
+{ "firstname":"Wilma"}'`{{execute}}
 ## 4. Delete the rows
 ## 5. Delete the table
