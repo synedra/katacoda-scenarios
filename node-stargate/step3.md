@@ -66,6 +66,6 @@ Check to make sure they're really in there:
 ## 3. Update the rows
 
 `http PUT :/rest/v2/keyspaces/workshop/cavemen/Flintstone/Fred json:='
-{ "firstname":"Wilma", "lastname":"Flintstone"}'`{{execute}}
+{ "occupation": "Quarry Screamer"}'`{{execute}}
 ## 4. Delete the rows
 ## 5. Delete the table
