@@ -86,4 +86,8 @@ We don't need our table anymore, let's delete it.
 
 `http DELETE :/rest/v2/schemas/keyspaces/workshop/tables/cavemen`{{execute}}
 
+Double checking - what tables are in my keyspace?
+
+`http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
+
 Now you can move on and check out the GraphQL API.
