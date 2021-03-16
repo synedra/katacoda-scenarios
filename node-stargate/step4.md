@@ -16,30 +16,48 @@ The first thing that needs to happen is to create a table.  HTTPie will handle t
     cavemen: createTable(
         keyspaceName: "workshop", 
         tableName: "cavemen", 
-        partitionKeys: [{name: "lastname", type: {basic: TEXT}}], clusteringKeys: [{name: "firstname", type: {basic: TEXT}}])}'
-        `{{execute}}
+        partitionKeys: 
+            [{name: "lastname", type: {basic: TEXT}}], 
+        clusteringKeys: 
+            [{name: "firstname", type: {basic: TEXT}}]
+    )}'`{{execute}}
 
 Just to be sure, go ahead and ask for a listing of the tables in the Workshop keyspace:
 
-`http POST :/graphql/workshop`{{execute}}
+`http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
+
 
 ## 2. Add some rows
-Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a few different rows with that data.
+Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a couple different rows with that data.
 
-`http POST :/rest/v2/keyspaces/workshop/cavemen json:='
-{
-            "firstname" : "Fred",
-            "lastname": "Flintstone"
+
+`http POST :/graphql/workshop query='
+mutation insertcavemen {
+  barney: insertcavemen(value: {firstname:"Barney", lastname: "Rubble"}) {
+    value {
+      firstname
+    }
+  }
 }'`{{execute}}
 
-`http POST :/rest/v2/keyspaces/workshop/cavemen json:='
-{
-            "firstname" : "Barney",
-            "lastname": "Rubble"
+`http POST :/graphql/workshop query='
+mutation insertcavemen {
+  fred: insertcavemen(value: {firstname:"Fred", lastname: "Flintstone"}) {
+    value {
+      firstname
+    }
+  }
 }'`{{execute}}
 
-Check to make sure they're really in there:
-`http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
+Check to make sure Barney's really in there:
+http POST :/graphql/workshop query='
+query getCaveman {
+    cavemen (value: {firstname:"Barney"}) {
+      values {
+      	lastname
+      }
+    }
+}'`{{execute}}
 
 ## 3. Update the rows
 
