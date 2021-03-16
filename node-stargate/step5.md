@@ -24,7 +24,9 @@ Otherwise just edit that file (it's in your current directory) to change the KEY
 
 ## 2. Write a document
 
+OK, let's get some cavemen in there!  The collection name will be auto-created when you add the document, so it doesn't have to exist ahead of time.  We'll use the KS shortcut to grab the keyspace from our credentials resource file.
 
+`http POST :/rest/v2/namespaces/KS/collections/cavemen json:='{"firstname": "Fred", "lastname": "Flintstone"}'`{{execute}}
 
 `http POST :/graphql/workshop query='
 mutation insertcavemen {
