@@ -56,7 +56,7 @@ mutation insertcavemen {
 Check to make sure Barney's really in there:
 http POST :/graphql/workshop query='
 query getCaveman {
-    cavemen (value: {firstname:"Barney"}) {
+    cavemen (value: {lastname:"Rubble"}) {
       values {
       	lastname
       }
@@ -66,21 +66,32 @@ query getCaveman {
 ## 3. Update the rows
 
 `http POST :/graphql/workshop query='
-mutation updateCaveman {
-  fred: updatecaveman(value: {firstname:"Fred",lastname:"Flintstone",occupation:"Quarry Screamer"}, ifExists: true ) {
+mutation updatecavemen {
+  fred: updatecavemen(value: {firstname:"Fred",lastname:"Flintstone",occupation:"Quarry Screamer"}, ifExists: true ) {
     value {
       firstname
     }
   }
-}
+}`{{execute}}
 
 Check our work:
-`http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
+`http POST :/graphql/workshop query='
+    query cavemen {
+    cavemen(filter: {lastname: {in: ["Rubble", "Flintstone"]}}) {
+    values {firstname}
+}}'`{{execute}}
 
 ## 4. Delete the rows
 
 Barney's not really adding a lot of value.  Let's kick him out:
-`http DELETE :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney`{{execute}}
+`http POST :/graphql/workshop query='
+mutation deletecavemen {
+  barney: deletecavemen(value: {firstname:"Barney",lastname:"Rubble"}, ifExists: true ) {
+    value {
+      firstname
+    }
+  }
+}'`{{execute}}
 
 So wait, is he gone?
 
