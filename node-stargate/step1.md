@@ -48,7 +48,7 @@ Make sure to chose a password with minimum 8 characters, containing upper and lo
 Honestly, there's not much to do here, but wait a couple minutes for your Astra database to start up. Once completed, you will have a fully managed Apache Cassandra database ready to rock and power your app.
 
 You will see your new database `Pending` or `Initializing` in the Dashboard.
-<img width="764" alt="image" src="https://user-images.githubusercontent.com/77410784/110698853-047ec000-81a3-11eb-98a1-bc80c2b175d0.png">
+<img width="919" alt="image" src="https://user-images.githubusercontent.com/77410784/111340767-28745280-8636-11eb-81a6-bcfcea4e1d18.png">
 
 The status will change to `Active` when the database is ready, this will only take 2-3 minutes and you will also receive an email when it is ready.
 
