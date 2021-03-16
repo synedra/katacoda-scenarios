@@ -2,7 +2,7 @@
 
 **Objectives**
 In this step, we will:
-1. [Set up IDE](#1-setup-ide) 
+1. [Install HTTPie](#1-install-httpie) 
 2. [Set up credentials](#2-set-up-credentials) for httpie and @astrajs
 3. [Verify Credentials](#3-verify-credentials) with HTTPie
 
