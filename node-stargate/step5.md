@@ -1,4 +1,4 @@
-# Exploring Stargate APIs from the command line - GraphQL
+# Exploring Stargate APIs from the command line - Document API
 
 In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the Document API.  This API deserves a little more explanation, as it is not what you might think of as a standard Cassandra database.  In this API, you give the database JSON objects and can then work with them based on their contents.  This database model doesn't require a schema, it just has the documents you put in there, which are placed in collections that you define.
 
@@ -16,7 +16,7 @@ Before you get started, you'll need to grab a list of your namespaces in order t
 
 Hey, look!  There's our friend 'workshop'.  A namespace is just a different way to organize data, and your keyspace is right there.  In fact, your keyspace should be in your environment variables, but just to check, try this:
 
-`cat ~/.astra | grep KEYSPACE`{{execute}}
+`cat ~/.astrarc | grep KEYSPACE`{{execute}}
 
 If that says "workshop" you're good to go, you'll get that for free as the KS placeholder in the queries.
 
