@@ -65,8 +65,14 @@ query getCaveman {
 
 ## 3. Update the rows
 
-`http PUT :/rest/v2/keyspaces/workshop/cavemen/Flintstone/Fred json:='
-{ "occupation": "Quarry Screamer"}'`{{execute}}
+`http POST :/graphql/workshop query='
+mutation updateCaveman {
+  fred: updatecaveman(value: {firstname:"Fred",lastname:"Flintstone",occupation:"Quarry Screamer"}, ifExists: true ) {
+    value {
+      firstname
+    }
+  }
+}
 
 Check our work:
 `http :/rest/v2/keyspaces/workshop/cavemen where=='{"lastname":{"$in":["Rubble","Flintstone"]}}' -vvv`{{execute}}
