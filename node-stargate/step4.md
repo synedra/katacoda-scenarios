@@ -80,7 +80,9 @@ Check our work:
 `http POST :/graphql/workshop query='
     query cavemen {
     cavemen(filter: {lastname: {in: ["Rubble", "Flintstone"]}}) {
-    values {firstname}
+    values {firstname
+    lastname
+    occupation}
 }}'`{{execute}}
 
 ## 4. Delete the rows
