@@ -30,7 +30,6 @@ Just to be sure, go ahead and ask for a listing of the tables in the Workshop ke
 
 `http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
 
-
 ## 2. Add some rows
 Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a couple different rows with that data.
 
@@ -65,6 +64,8 @@ query getCaveman {
 
 ## 3. Update the rows
 
+Again, giving Fred a job.
+
 `http POST :/graphql/workshop query='
 mutation updatecavemen {
   fred: updatecavemen(value: {firstname:"Fred",lastname:"Flintstone",occupation:"Quarry Screamer"}, ifExists: true ) {
@@ -72,7 +73,7 @@ mutation updatecavemen {
       firstname
     }
   }
-}`{{execute}}
+}'`{{execute}}
 
 Check our work:
 `http POST :/graphql/workshop query='
@@ -95,11 +96,15 @@ mutation deletecavemen {
 
 So wait, is he gone?
 
-`http :/rest/v2/keyspaces/workshop/cavemen/Rubble/Barney`{{execute}}
+`http POST :/graphql/workshop query='
+    query cavemen {
+    cavemen(filter: {lastname: {in: ["Rubble", "Flintstone"]}}) {
+    values {firstname}
+}}'`{{execute}}
 
 ## 5. Delete the table
 
-We don't need our table anymore, let's delete it.
+We don't need our table anymore, let's delete it.  We need to use the REST API for this.
 
 `http DELETE :/rest/v2/schemas/keyspaces/workshop/tables/cavemen`{{execute}}
 

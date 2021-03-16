@@ -19,7 +19,15 @@ HTTPie is an excellent API CLI tool, which we've extended to understand the astr
 
 `wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/env.sh`{{execute}}
 
-**✅ Step 2: Go back to the [Astra UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.**
+**✅ Step 2: Start the env.sh script**
+
+Now you'll run a script which will populate your environment variables in the right places for the tools to use.
+
+`clear; bash env.sh`{{execute}}
+
+It's waiting for you to paste in your variables, so you'll need to get those.
+
+**✅ Step 3: Go back to the [Astra UI](https://astra.datastax.com) and click the **`CONNECT`** button on the line for the database you just created.**
 
 ![image](https://user-images.githubusercontent.com/77410784/110701039-853ebb80-81a5-11eb-8a5f-1d6801932321.png)
 
@@ -28,14 +36,7 @@ This will bring you to the `Connect` page.
 Scroll down to the configuration block on the right hand side, and click the icon at the top right to copy.
 ![image](https://user-images.githubusercontent.com/77410784/111052773-e3240b00-8412-11eb-9129-82f6433580f8.png)
 
-**✅ Step 3: Paste your credentials into the env.sh script**
-
-Run the environment variable script:
-`clear; bash env.sh`{{execute}}
-
 Paste in the block from the "connect" screen.
-
-When it asks for your token, leave that window and back in the Astra window select the "Settings" tab.
 
 **✅ Step 4: Retrieve and paste your application token**
 
