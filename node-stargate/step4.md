@@ -24,7 +24,7 @@ The first thing that needs to happen is to create a table.  HTTPie will handle t
             { name: "occupation", type: {basic: TEXT} }
         ]
 
-    )}'`{{execute}}
+)}'`{{execute}}
 
 Just to be sure, go ahead and ask for a listing of the tables in the Workshop keyspace:
 
