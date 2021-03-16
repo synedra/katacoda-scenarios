@@ -1,6 +1,6 @@
 # Exploring Stargate APIs from the command line - GraphQL
 
-In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the REST API
+In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the GraphQL API
 
 * [GraphQL - Create a Table](#1.-create-a-table)
 * [GraphQL - Add some rows](#2.-add-some-rows)
@@ -24,7 +24,8 @@ mutation createTables {
         values: [
             { name: "occupation", type: {basic: TEXT} }
         ]
-)}'`{{execute}}
+)}'
+`{{execute}}
 
 Just to be sure, go ahead and ask for a listing of the tables in the Workshop keyspace:
 
@@ -53,7 +54,7 @@ mutation insertcavemen {
 }'`{{execute}}
 
 Check to make sure Barney's really in there:
-http POST :/graphql/workshop query='
+`http POST :/graphql/workshop query='
 query getCaveman {
     cavemen (value: {lastname:"Rubble"}) {
       values {
