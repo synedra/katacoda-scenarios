@@ -5,8 +5,7 @@ In this section you will use our httpie configuration to take a look at the Star
 * [Document - Choose a Namespace](#1.-create-a-namespace)
 * [Document - Write a Document](#2.-write-a-document)
 * [Document - Read documents](#3.-read-documents)
-* [Document - ](#4.-delete-the-rows)
-* [GraphQL - Delete the table](#5.-delete-the-table)
+* [Document - Update documents](#4.-Update-documents)
 
 ### 1. Choose a namespace
 
@@ -28,37 +27,49 @@ OK, let's get some cavemen in there!  The collection name will be auto-created w
 
 `http POST :/rest/v2/namespaces/KS/collections/cavemen json:='{"firstname": "Fred", "lastname": "Flintstone"}'`{{execute}}
 
-`http POST :/graphql/workshop query='
-mutation insertcavemen {
-  barney: insertcavemen(value: {firstname:"Barney", lastname: "Rubble"}) {
-    value {
-      firstname
-    }
-  }
-}'`{{execute}}
+Hmm, that document ID isn't easy to use, let's go ahead and specify one explicitly for Barney.
 
-`http POST :/graphql/workshop query='
-mutation insertcavemen {
-  fred: insertcavemen(value: {firstname:"Fred", lastname: "Flintstone"}) {
-    value {
-      firstname
-    }
-  }
-}'`{{execute}}
+`http PUT :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble json:='{"firstname": "Barney", "lastname": "Rubble"}'`{{execute}}
 
-Check to make sure Barney's really in there:
-http POST :/graphql/workshop query='
-query getCaveman {
-    cavemen (value: {lastname:"Rubble"}) {
-      values {
-      	lastname
-      }
-    }
-}'`{{execute}}
+Let's make sure our documents were written correctly:
 
-## 3. Update the rows
+`http :/api/rest/v2/namespaces/KS/collections/cavemen`{{execute}}
 
-Again, giving Fred a job.
+## 3. Read documents
+
+IF you know the ID of your document, it's easy to see what's there:
+
+`http :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble`{{execute}}
+
+But where is Fred?  I didn't write down his document ID!  You can get the Document ID for anything by querying the values in the document.
+
+`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}'`
+
+The "where" clause is really powerful, and allows you to combine different elements to really zero in on the document you want.
+
+You can even get just a subset of the document by specifying a particular section in the path.
+
+`http :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble/firstname`{{execute}}
+
+and you can use "where" to specify a range of documents:
+
+`http GET :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble where:='{"firstname": {"$gt": "Fred"}}'`{{execute}}
+
+
+## 3. Update documents
+
+So now we have Fred and Barney, but once again we haven't given Fred ajob.  He just annoys Wilma when he hangs out at home, so that won't do at all.
+
+Here's how you give Fred a job and get him out of Wilma's hair.  Remember, we just got his ID a few commands ago.  Let's grab it again, my document ID probably won't work for you.
+
+Let's set an environment variable to make this easy.
+
+``export DOCUMENT_ID=`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId"```
+
+Again, giving Fred a job. Wilma thanks you.
+
+`http PATCH /rest/v2/namespaces/KS/collections/cavemen/$DOCUMENT_ID json:='{"firstname":"Fred","lastname":"flintstone","occupation":"Quarry Screamer"}'`{{execute}}
+
 
 `http POST :/graphql/workshop query='
 mutation updatecavemen {
