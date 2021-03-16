@@ -43,7 +43,7 @@ IF you know the ID of your document, it's easy to see what's there:
 
 But where is Fred?  I didn't write down his document ID!  You can get the Document ID for anything by querying the values in the document.
 
-`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}'`{{execute}}
+`http GET :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}'`{{execute}}
 
 The "where" clause is really powerful, and allows you to combine different elements to really zero in on the document you want.
 
@@ -55,20 +55,19 @@ and you can use "where" to specify a range of documents:
 
 `http GET :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble where:='{"lastname": {"$gt": "Flintstone"}}'`{{execute}}
 
-
 ## 3. Update documents
 
-So now we have Fred and Barney, but once again we haven't given Fred ajob.  He just annoys Wilma when he hangs out at home, so that won't do at all.
+So now we have Fred and Barney, but once again we haven't given Fred a job.  He just annoys Wilma when he hangs out at home, so that won't do at all.
 
-Here's how you give Fred a job and get him out of Wilma's hair.  Remember, we just got his ID a few commands ago.  Let's grab it again, my document ID probably won't work for you.
+Here's how you give Fred a job and get him out of Wilma's hair.  Remember, we just got his ID a few commands ago.  Let's grab it again and set it in the environment so we can use it as we like.
 
-Let's set an environment variable to make this easy.
+This is how to set an environment variable to make this easy.
 
-``export DOCUMENT_ID=`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId"```
+`export DOCUMENT_ID=$(http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId")`
 
 Again, giving Fred a job. Wilma thanks you.
 
-`http PATCH /rest/v2/namespaces/KS/collections/cavemen/$DOCUMENT_ID json:='{"firstname":"Fred","lastname":"flintstone","occupation":"Quarry Screamer"}'`{{execute}}
+`http PATCH :/rest/v2/namespaces/KS/collections/cavemen/$DOCUMENT_ID json:='{"firstname":"Fred","lastname":"flintstone","occupation":"Quarry Screamer"}'`{{execute}}
 
 
 `http POST :/graphql/workshop query='
