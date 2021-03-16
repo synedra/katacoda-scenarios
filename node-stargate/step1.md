@@ -38,7 +38,7 @@ Make sure to chose a password with minimum 8 characters, containing upper and lo
 ✅ 2. **Choose your plan:** The "Pay as You Go" plan gives you $25/month of traffic and storage, and does not require a credit card - if you get close to the limit we'll let you know.  Click "Get Started."
 
 ✅ 3. **Name your Database:** With our new serverless plan you can have as many databases as you need.  For this workshop, use "node-stargate" as the database name and "Workshop" as the Keyspace name.
-<img width="846" alt="image" src="https://user-images.githubusercontent.com/77410784/110698184-2e83b280-81a2-11eb-9906-506288876e5f.png">
+<img width="700" "https://user-images.githubusercontent.com/77410784/111339996-7472c780-8635-11eb-801d-b7321c2bcbb7.png"">
 
 ✅ 4. **Select a cloud provider:** You can use either GCP or AWS.  Chose a region that's geographically close to you.
 
