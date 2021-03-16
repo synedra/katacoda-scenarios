@@ -115,4 +115,4 @@ Double checking - what tables are in my keyspace?
 
 `http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
 
-Now you can move on and check out the GraphQL API.
+Now you can move on and check out the Document API.

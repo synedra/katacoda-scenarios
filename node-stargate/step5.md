@@ -33,7 +33,7 @@ Hmm, that document ID isn't easy to use, let's go ahead and specify one explicit
 
 Let's make sure our documents were written correctly:
 
-`http :/api/rest/v2/namespaces/KS/collections/cavemen`{{execute}}
+`http :/rest/v2/namespaces/KS/collections/cavemen page-size==5`{{execute}}
 
 ## 3. Read documents
 
@@ -43,7 +43,7 @@ IF you know the ID of your document, it's easy to see what's there:
 
 But where is Fred?  I didn't write down his document ID!  You can get the Document ID for anything by querying the values in the document.
 
-`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}'`
+`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}'`{{execute}}
 
 The "where" clause is really powerful, and allows you to combine different elements to really zero in on the document you want.
 
@@ -53,7 +53,7 @@ You can even get just a subset of the document by specifying a particular sectio
 
 and you can use "where" to specify a range of documents:
 
-`http GET :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble where:='{"firstname": {"$gt": "Fred"}}'`{{execute}}
+`http GET :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble where:='{"lastname": {"$gt": "Flintstone"}}'`{{execute}}
 
 
 ## 3. Update documents
