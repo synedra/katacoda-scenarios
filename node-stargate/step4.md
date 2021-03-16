@@ -19,7 +19,11 @@ The first thing that needs to happen is to create a table.  HTTPie will handle t
         partitionKeys: 
             [{name: "lastname", type: {basic: TEXT}}], 
         clusteringKeys: 
-            [{name: "firstname", type: {basic: TEXT}}]
+            [{name: "firstname", type: {basic: TEXT}}],
+        values: [
+            { name: "occupation", type: {basic: TEXT} }
+        ]
+
     )}'`{{execute}}
 
 Just to be sure, go ahead and ask for a listing of the tables in the Workshop keyspace:
