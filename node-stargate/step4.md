@@ -2,11 +2,11 @@
 
 In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the GraphQL API
 
-* [GraphQL - Create a Table](#1.-create-a-table)
-* [GraphQL - Add some rows](#2.-add-some-rows)
-* [GraphQL - Update the rows](#3.-update-the-rows)
-* [GraphQL - Delete the rows](#4.-delete-the-rows)
-* [GraphQL - Delete the table](#5.-delete-the-table)
+* GraphQL - Create a Table
+* GraphQL - Add some rows
+* GraphQL - Update the rows
+* GraphQL - Delete the rows
+* GraphQL - Delete the table
 
 ### 1. Create a table
 

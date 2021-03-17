@@ -93,4 +93,4 @@ But what if you're done with all the cavemen and want to clear out your document
 
 `http DELETE :/rest/v2/keyspaces/KS/collections/cavemen`{{execute}}
 
-Fantastic!  We've gone over all three of the API types.  Next we'll harness the APIs using a handy node library.
+Fantastic!  We've gone over all three of the API types.  Next we'll harness the APIs using @astrajs, a handy node library.
