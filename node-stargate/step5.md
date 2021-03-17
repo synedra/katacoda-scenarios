@@ -44,7 +44,7 @@ IF you know the ID of your document, it's easy to see what's there:
 
 But where is Fred?  I didn't write down his document ID!  You can get the Document ID for anything by querying the values in the document.
 
-`http GET :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}'`{{execute}}
+`http GET :/rest/v2/namespaces/KS/collections/cavemen where=='{"firstname" { $eq: "Fred’}}'`{{execute}}
 
 The "where" clause is really powerful, and allows you to combine different elements to really zero in on the document you want.
 
@@ -66,7 +66,7 @@ I'd like to give you a one-click way to set an env variable but alas, I think yo
 
 First, get your documentId.
 
-`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId"`
+`http :/rest/v2/namespaces/KS/collections/cavemen where=='{"firstname" { $eq: "Fred’}}'`{{execute}}
 
 Next, export that ID into your environment
 
@@ -76,6 +76,9 @@ Again, giving Fred a job. Wilma thanks you.
 
 `http PATCH :/rest/v2/namespaces/KS/collections/cavemen/$DOCUMENT_ID json:='{"firstname":"Fred","lastname":"flintstone","occupation":"Quarry Screamer"}'`{{execute}}
 
+So, how's Fred looking now?
+
+`http GET :/rest/v2/namespaces/KS/collections/cavemen/$DOCUMENT_ID`{{execute}}
 
 
 ## 5. Delete the table
@@ -84,10 +87,10 @@ Not surprisingly, with this API, to delete a document you just, well, DELETE the
 
 Let's go ahead and kick Barney out again.  He's gotta be used to it by now.
 
-`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen/BarneyRubble`
+`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen/BarneyRubble`{{execute}}
 
 But what if you're done with all the cavemen and want to clear out your documents?  This one is also really easy:
 
-`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen`
+`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen`{{execute}}
 
 Fantastic!  We've gone over all three of the API types.  Next we'll harness the APIs using a handy node library.

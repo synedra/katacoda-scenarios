@@ -36,7 +36,7 @@ This will bring you to the `Connect` page.
 Scroll down to the configuration block on the right hand side, and click the icon at the top right to copy.
 ![image](https://user-images.githubusercontent.com/77410784/111052773-e3240b00-8412-11eb-9129-82f6433580f8.png)
 
-Paste in the block from the "connect" screen.
+Paste in the block from the "connect" screen, then hit enter, and env.sh will ask you for your token.
 
 **✅ Step 4: Retrieve and paste your application token**
 
@@ -44,7 +44,7 @@ In the Astra dashboard, click the "Settings tab" for your database.
 
 Set the "Select Role" dropdown to API Admin, and copy the token from the resulting popup.
 
-In the katacoda environment, paste the token to finish setting your credentials.
+In the katacoda environment, paste the token and submit to finish setting your credentials.
 
 ## 3. Verify Credentials
 
