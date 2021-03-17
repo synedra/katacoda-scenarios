@@ -41,7 +41,7 @@ If you are already familiar with our Cassandra stack and just want to move on to
 
 **🔵 Serverless:**  SOMEBODY HELP ME WITH MESSAGING HERE
 
-**🔵 Free tier:** We replaced our free tier with a $25/month credit which gets you a great deal of bandwidth and storage.  I need examples.  This is super vague. 
+**🔵 Free tier:** We replaced our free tier with a $25/month credit which gets you a great deal of bandwidth and storage for experimenting and running small applications.
 
 **🔵 Stargate:**  All Cassandra instances come with Stargate included.
 
