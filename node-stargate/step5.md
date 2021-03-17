@@ -63,7 +63,7 @@ Here's how you give Fred a job and get him out of Wilma's hair.  Remember, we ju
 
 This is how to set an environment variable to make this easy.
 
-`export DOCUMENT_ID=$(http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId")`
+```export DOCUMENT_ID=$(http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId")```
 
 Again, giving Fred a job. Wilma thanks you.
 
