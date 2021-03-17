@@ -17,3 +17,11 @@ First, install the libraries.
 
 `npm install @astrajs/collections @astrajs/rest`{{execute}}
 
+Head back to the Astra Connect page for your database and copy the configuration block again, and paste it right in the terminal.
+
+### 2. Grab the cavemen.js file
+
+`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/cavemen.js`
+
+Click on your new file in the file explorer to see what's there.
+
