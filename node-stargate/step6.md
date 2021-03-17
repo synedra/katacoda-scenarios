@@ -15,7 +15,7 @@ In this step we will:
 
 First, install the libraries.
 
-`npm install @astrajs/collections @astrajs/rest`{{execute}}
+`npm install @astrajs/collections @astrajs/rest@0.0.12 sleep`{{execute}}
 
 Head back to the Astra Connect page for your database and copy the configuration block again, and paste it right in the terminal.
 
