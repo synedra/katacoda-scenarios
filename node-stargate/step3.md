@@ -2,11 +2,11 @@
 
 In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the REST API
 
-* [REST - Create a Table](#1.-create-a-table)
-* [REST - Add some rows](#2.-add-some-rows)
-* [REST - Update the rows](#3.-update-the-rows)
-* [REST - Delete the rows](#4.-delete-the-rows)
-* [REST - Delete the table](#5.-delete-the-table)
+* REST - Create a Table
+* REST - Add some rows
+* REST - Update the rows
+* REST - Delete the rows
+* REST - Delete the table
 
 ### 1. Create a table
 
@@ -46,7 +46,7 @@ Just to be sure, go ahead and ask for a listing of the tables in the Workshop ke
 `http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
 
 ## 2. Add some rows
-Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a few different rows with that data.
+Great!  The table is created.  But it's kind of dull with no data.  Since it's looking for firstname and lastname, add a couple different rows with that data.
 
 `http POST :/rest/v2/keyspaces/workshop/cavemen json:='
 {

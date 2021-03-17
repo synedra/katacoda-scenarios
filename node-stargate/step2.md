@@ -2,9 +2,9 @@
 
 **Objectives**
 In this step, we will:
-1. [Install HTTPie](#1-install-httpie) 
-2. [Set up credentials](#2-set-up-credentials) for httpie and @astrajs
-3. [Verify Credentials](#3-verify-credentials) with HTTPie
+1. Install HTTPie
+2. Set up credentials
+3. Verify Credentials
 
 ---
 

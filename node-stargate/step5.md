@@ -2,11 +2,11 @@
 
 In this section you will use our httpie configuration to take a look at the Stargate APIs.  In this section we will use the Document API.  This API deserves a little more explanation, as it is not what you might think of as a standard Cassandra database.  In this API, you give the database JSON objects and can then work with them based on their contents.  This database model doesn't require a schema, it just has the documents you put in there, which are placed in collections that you define.
 
-* [Document - Choose a Namespace](#1.-create-a-namespace)
-* [Document - Write a Document](#2.-write-a-document)
-* [Document - Read documents](#3.-read-documents)
-* [Document - Update documents](#4.-Update-documents)
-* [Document - Delete document](#5.-Delete-document)
+* Document - Choose a Namespace
+* Document - Write a Document
+* Document - Read documents
+* Document - Update documents
+* Document - Delete document
 
 ### 1. Choose a namespace
 
