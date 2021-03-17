@@ -6,6 +6,7 @@ In this section you will use our httpie configuration to take a look at the Star
 * [Document - Write a Document](#2.-write-a-document)
 * [Document - Read documents](#3.-read-documents)
 * [Document - Update documents](#4.-Update-documents)
+* [Document - Delete document](#5.-Delete-document)
 
 ### 1. Choose a namespace
 
@@ -61,59 +62,32 @@ So now we have Fred and Barney, but once again we haven't given Fred a job.  He 
 
 Here's how you give Fred a job and get him out of Wilma's hair.  Remember, we just got his ID a few commands ago.  Let's grab it again and set it in the environment so we can use it as we like.
 
-This is how to set an environment variable to make this easy.
+I'd like to give you a one-click way to set an env variable but alas, I think you will have to type a few characters into the terminal.
 
-```export DOCUMENT_ID=$(http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId")```
+First, get your documentId.
+
+`http :/rest/v2/namespaces/KS/collections/cavemen where:='{"firstname": "Fred"}' | jq ".documentId"`
+
+Next, export that ID into your environment
+
+export DOCUMENT_ID=<documentId>
 
 Again, giving Fred a job. Wilma thanks you.
 
 `http PATCH :/rest/v2/namespaces/KS/collections/cavemen/$DOCUMENT_ID json:='{"firstname":"Fred","lastname":"flintstone","occupation":"Quarry Screamer"}'`{{execute}}
 
 
-`http POST :/graphql/workshop query='
-mutation updatecavemen {
-  fred: updatecavemen(value: {firstname:"Fred",lastname:"Flintstone",occupation:"Quarry Screamer"}, ifExists: true ) {
-    value {
-      firstname
-    }
-  }
-}'`{{execute}}
-
-Check our work:
-`http POST :/graphql/workshop query='
-    query cavemen {
-    cavemen(filter: {lastname: {in: ["Rubble", "Flintstone"]}}) {
-    values {firstname}
-}}'`{{execute}}
-
-## 4. Delete the rows
-
-Barney's not really adding a lot of value.  Let's kick him out:
-`http POST :/graphql/workshop query='
-mutation deletecavemen {
-  barney: deletecavemen(value: {firstname:"Barney",lastname:"Rubble"}, ifExists: true ) {
-    value {
-      firstname
-    }
-  }
-}'`{{execute}}
-
-So wait, is he gone?
-
-`http POST :/graphql/workshop query='
-    query cavemen {
-    cavemen(filter: {lastname: {in: ["Rubble", "Flintstone"]}}) {
-    values {firstname}
-}}'`{{execute}}
 
 ## 5. Delete the table
 
-We don't need our table anymore, let's delete it.  We need to use the REST API for this.
+Not surprisingly, with this API, to delete a document you just, well, DELETE the document.
 
-`http DELETE :/rest/v2/schemas/keyspaces/workshop/tables/cavemen`{{execute}}
+Let's go ahead and kick Barney out again.  He's gotta be used to it by now.
 
-Double checking - what tables are in my keyspace?
+`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen/BarneyRubble`
 
-`http :/rest/v2/schemas/keyspaces/workshop/tables`{{execute}}
+But what if you're done with all the cavemen and want to clear out your documents?  This one is also really easy:
 
-Now you can move on and check out the GraphQL API.
+`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen`
+
+Fantastic!  We've gone over all three of the API types.  Next we'll harness the APIs using a handy node library.
