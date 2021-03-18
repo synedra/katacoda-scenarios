@@ -21,7 +21,7 @@ Head back to the Astra Connect page for your database and copy the configuration
 
 ### 2. Grab the cavemen.js file
 
-`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/cavemen.js`
+`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/cavemen.js`{{execute}}
 
 Click on your new file in the file explorer to see what's there.
 
