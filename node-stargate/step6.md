@@ -25,3 +25,7 @@ Head back to the Astra Connect page for your database and copy the configuration
 
 Click on your new file in the file explorer to see what's there.
 
+You can explore the code as I describe it.  Your homework for this workshop will be to create a new call for cavemen.sh - something you think would be cool to try.
+
+Ok, great!  Now you can visit the Next Steps page on [Github](https://bit.ly/node-stargate)
+
