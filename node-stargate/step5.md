@@ -66,11 +66,11 @@ I'd like to give you a one-click way to set an env variable but alas, I think yo
 
 First, get your documentId.
 
-`http :/rest/v2/namespaces/KS/collections/cavemen where=='{"firstname" { $eq: "Fred’}}'`{{execute}}
+`http :/rest/v2/namespaces/KS/collections/cavemen where=='{"firstname": { "$eq": "Fred"}}'`{{execute}}
 
 Next, export that ID into your environment
 
-export DOCUMENT_ID=<documentId>
+`export DOCUMENT_ID=`{{copy}
 
 Again, giving Fred a job. Wilma thanks you.
 
@@ -87,10 +87,10 @@ Not surprisingly, with this API, to delete a document you just, well, DELETE the
 
 Let's go ahead and kick Barney out again.  He's gotta be used to it by now.
 
-`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen/BarneyRubble`{{execute}}
+`http DELETE :/rest/v2/namespaces/KS/collections/cavemen/BarneyRubble`{{execute}}
 
 But what if you're done with all the cavemen and want to clear out your documents?  This one is also really easy:
 
-`http DELETE :/rest/v2/keyspaces/KS/collections/cavemen`{{execute}}
+`http DELETE :/rest/v2/namespaces/KS/collections/cavemen`{{execute}}
 
 Fantastic!  We've gone over all three of the API types.  Next we'll harness the APIs using @astrajs, a handy node library.
