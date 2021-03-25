@@ -44,7 +44,7 @@ IF you know the ID of your document, it's easy to see what's there:
 
 But where is Fred?  I didn't write down his document ID!  You can get the Document ID for anything by querying the values in the document.
 
-`http GET :/rest/v2/namespaces/KS/collections/cavemen where=='{"firstname" { $eq: "Fred’}}'`{{execute}}
+`http GET :/rest/v2/namespaces/KS/collections/cavemen where=='{"firstname": { "$eq": "Fred"}}'`{{execute}}
 
 The "where" clause is really powerful, and allows you to combine different elements to really zero in on the document you want.
 
