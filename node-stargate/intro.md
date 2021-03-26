@@ -2,14 +2,6 @@
 
 If you are already familiar with our Cassandra stack and just want to move on to the first exercise go to the next section => ⚒️ [Create Astra Instance](LAB1_Create_astra). Otherwise, read on.
 
-**We will cover:**
-
-1. [Top Level Overview of the Astra Stack](#1-Top-Level-Overview-of-the-Astra-Stack)
-2. [Cassandra Details](#2-cassandra-details)
-3. [Astra Information](#3-astra-information)
-4. [Stargate APIs](#4-stargate-apis)
----
-
 ## 1. Top Level Overview of the Astra Stack
 
 > *Sources [Cassandra Documentation](https://cassandra.io), [Astra Documentation](https://docs.datastax.com/en/astra/docs/) and [Stargate Documentation](https://stargate.io/docs/stargate/1.0/quickstart/quickstart.html)*
@@ -39,7 +31,7 @@ If you are already familiar with our Cassandra stack and just want to move on to
 ## 3. Astra Information
 ![ok](https://github.com/synedra-datastax/ExploringStargate/blob/main/images/Overview2.png?raw=true)
 
-**🔵 Serverless:**  SOMEBODY HELP ME WITH MESSAGING HERE
+**🔵 Serverless:**  Scale up or down without doing any work.  Just work with your data, and leave the ops to us.
 
 **🔵 Free tier:** We replaced our free tier with a $25/month credit which gets you a great deal of bandwidth and storage for experimenting and running small applications.
 
