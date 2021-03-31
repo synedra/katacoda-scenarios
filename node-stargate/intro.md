@@ -10,7 +10,7 @@ If you are already familiar with our Cassandra stack and just want to move on to
 
 **🔵 Cassandra:**  is the NoSQL Open Source Database which is the foundation of the stack.  Cassandra powers many extremely large and demanding databases for enterprises around the world, and is the best option for companies needing scalability and performance.
 
-**🔵 Astra:**  provides a serverless instance of Cassandra.  This comes with a free $25 credit, providing a significant amount of data and transactions.  You're charged only for what you use, and there's no credit card needed.
+**🔵 Astra:**  provides a serverless instance of Cassandra.  This comes with a free $25/month credit, providing a significant amount of data and transactions.  You're charged only for what you use, and there's no credit card needed.
 
 **🔵 Stargate:**  is an open source engine to provide APIs for Cassandra databases.  It's available free for your use, and comes with every Astra instance.
 

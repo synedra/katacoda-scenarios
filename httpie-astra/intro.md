@@ -9,8 +9,6 @@ In this quick scenario, you'll:
 
 # 📚 Datastax: Cassandra, Astra and Stargate
 
-If you are already familiar with our Cassandra stack and just want to move on to the first exercise go to the next section => ⚒️ [Create Astra Instance](LAB1_Create_astra). Otherwise, read on.
-
 ## 1. Top Level Overview of the Astra Stack
 
 > *Sources [Cassandra Documentation](https://cassandra.io), [Astra Documentation](https://docs.datastax.com/en/astra/docs/) and [Stargate Documentation](https://stargate.io/docs/stargate/1.0/quickstart/quickstart.html)*

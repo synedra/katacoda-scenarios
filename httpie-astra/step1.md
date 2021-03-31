@@ -8,9 +8,9 @@ In this step, we will:
 
 **We will cover:**
 
-1. [Register and Sign In to Astra](#1-register-and-sign-in-to-astra)
-2. [Configure and create your database](#2-configure-and-create-your-database)
-3. [Let Astra Start Up](#3-let-astra-start-up)
+1. Register and Sign In to Astra
+2. Configure and create your database
+3. Let Astra Start Up
 
 One of the first things we need to do is hook up the "plumbing" of our application to talk to our back-end services, namely, our Cassandra database with **Astra**. Once this is in place, we are connected and ready to go with the services we need to power our app.
 
