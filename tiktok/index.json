@@ -67,11 +67,11 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "intro-foreground.sh"
     },
     "finish": {
-      "text": "finish.md",
-      "courseData": "git clone https://github.com/synedra/tik-tok.git"
+      "text": "finish.md"
     }
   },
   "environment": {
