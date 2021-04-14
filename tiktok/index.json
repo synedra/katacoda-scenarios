@@ -11,8 +11,7 @@
       },
       {
         "title": "Step 2",
-        "text": "step2.md",
-        "courseData": "intro-foreground.sh"
+        "text": "step2.md"
       },
       {
         "title": "Step 3",
@@ -68,7 +67,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "intro-foreground.sh"
     },
     "finish": {
       "text": "finish.md"
