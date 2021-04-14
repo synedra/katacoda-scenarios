@@ -11,9 +11,11 @@ Routing is the ability to move between different parts of an application when a 
 
 # 1. Install the routing module
 
+Start up a second terminal window:
+`echo "This is your second terminal"`{{execute T2}}
+
 Install the react-router-dom package:
 `cd astra-tik-tok`{{execute T2}}
-
 `yarn add react-router-dom`{{execute}}
 
 Add the following import statement to your index.js file (click the copy link, it'll do it for you)
@@ -23,14 +25,11 @@ Now you need to create component pages for your Home and Upload components.
 
 Copy the src/App.js file to src/Home.js
 `cp src/App.js src/Home.js`{{execute}}
-Change the 'App' references in the file to 'Home'
-<pre class="file" data-filename="Home.js" data-target="insert"  data-marker="App">Home</pre>
+Change the three 'App' references in the file to 'Home'
 
 Copy the src/App.js file to src/Upload.js
 `cp src/App.js src/Upload.js`{{execute}}
-Change the 'App' references in the file to 'Upload'
-<pre class="file" data-filename="Upload.js" data-target="insert"  data-marker="App">Upload</pre>
-
+Change the three 'App' references in the file to 'Upload'
 
 It's time to make some changes to index.js.  Instead of keeping the App component in its own file we'll bring it into here for easier maintenance.
 
@@ -39,4 +38,15 @@ In the index.js file, change the imports.  This will remove the App.js import co
 <pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import App from './App';">
 import Home from './pages/Home'
 import Upload from './pages/Upload'
+
+const App = () => {
+  return (
+    &lt;HashRouter&gt;
+    &lt;Switch&gt;
+      &lt;Route path= "/upload" component={Upload}/&gt;
+      &lt;Route path= "/" component={Home}/&gt;
+    &lt;/Switch&gt;
+  &lt;/HashRouter&gt;
+  );
+}
 </pre>
