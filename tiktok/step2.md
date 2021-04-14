@@ -14,6 +14,10 @@ First, change into the TikTok directory
 Next, install all the node modules you need
 `npm install`{{execute}}
 
+And now run the setup script to get your environment variables all set up.
+
+`node setup.js`
+
 Follow the prompts in the console to set up your admin and db tokens.
 
 # 2. Verify Credentials
