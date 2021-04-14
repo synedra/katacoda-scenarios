@@ -62,11 +62,11 @@ async function getTokens() {
 			console.log('Click on the database name (tiktok) to view details.')
 			console.log('Click on the Settings tab at the top of the screen')
 			
-			process.env['ASTRA_DB_ADMIN_TOKEN']= await question("Create an application token for Database Administrator\n    (save to CSV if desired)\n    and paste the 'Token' value here:\n")
+			process.env['ASTRA_DB_ADMIN_TOKEN']= await question("Create an application token for Database Administrator\n    (save to CSV if desired)\n    and paste the 'Token' value here, and hit return:\n")
 			process.env['ASTRA_DB_ADMIN_TOKEN'] = process.env['ASTRA_DB_ADMIN_TOKEN'].replace(/"/g,"");
 			dotenv.edit({ ASTRA_DB_ADMIN_TOKEN: process.env['ASTRA_DB_ADMIN_TOKEN']});
 			astraconfig.set('default','ASTRA_DB_ADMIN_TOKEN', process.env['ASTRA_DB_ADMIN_TOKEN'])
-			process.env['ASTRA_DB_APPLICATION_TOKEN'] = await question("Create an application token for API Admin User \n    (save to CSV if desired)\n    and paste the 'Token' value here:\n")
+			process.env['ASTRA_DB_APPLICATION_TOKEN'] = await question("Create an application token for API Admin User \n    (save to CSV if desired)\n    and paste the 'Token' value here and hit return:\n")
 			process.env['ASTRA_DB_APPLICATION_TOKEN'] = process.env['ASTRA_DB_APPLICATION_TOKEN'].replace(/"/g,"");
 			dotenv.edit({ ASTRA_DB_APPLICATION_TOKEN: process.env['ASTRA_DB_APPLICATION_TOKEN']});
 			astraconfig.set('default', 'ASTRA_DB_APPLICATION_TOKEN', process.env['ASTRA_DB_APPLICATION_TOKEN'])

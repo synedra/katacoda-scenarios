@@ -4,7 +4,7 @@
 In this step, we will:
 1. Build the react application we'll be working with
 2. Clean up the template
-3. Check the results in a browse3r
+3. Check the results in a browser
 
 ---
 
@@ -27,12 +27,12 @@ First, remove the extra files:
 `rm -rf yarn.lock src/App.test.js reportWebVitals.js setupTests.js`{{execute}}
 
 In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
-`import logo from './logo.svg';
-<img src={logo} className="App-logo" alt="logo" />`
+* `import logo from './logo.svg';`
+* `<img src={logo} className="App-logo" alt="logo" />`
 
 In `astra-tik-tok/src/index.js`{{open}}, remove the following lines
-`import reportWebVitals from './reportWebVitals';
-reportWebVitals();`
+* `import reportWebVitals from './reportWebVitals';`
+* `reportWebVitals();`
 
 Install the modules for the application.  This will take some time, please be patient:
 `npm install`{{execute}}

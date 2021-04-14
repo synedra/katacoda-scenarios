@@ -18,13 +18,9 @@ Run 'npm install' to get requirements.
 
 Run setup.js
 
-`node setup.js`{{execute}}
+`node setup.js; cd ..`{{execute}}
 
 Follow the prompts in the console to set up your admin and db tokens.
-
-Change back into the main directory
-
-`cd ..`{{execute}}
 
 # 2. Verify Credentials
 
