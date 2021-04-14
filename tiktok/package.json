@@ -1,0 +1,34 @@
+{
+    "name": "astrasetup",
+    "version": "1.0.0",
+    "description": "Sets up astra",
+    "main": "setup.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/synedra/tik-tok.git"
+    },
+    "keywords": [
+      "setup"
+    ],
+    "author": "Kirsten Hunter",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/synedra/tik-tok/issues"
+    },
+    "homepage": "https://github.com/synedra/tik-tok#readme",
+    "dependencies": {
+      "@astrajs/collections": "^0.0.13",
+      "@astrajs/rest": "^0.0.13",
+      "axios": "^0.21.1",
+      "chalk": "^4.1.0",
+      "configparser": "^0.3.9",
+      "fs": "^0.0.1-security",
+      "node-jq": "^1.12.0",
+      "os": "^0.1.1",
+      "parsenv": "^1.0.2",
+      "readline": "^1.3.0"
+    }
+  }

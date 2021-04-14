@@ -4,6 +4,12 @@
   "difficulty": "Intermediate",
   "time": "2 hours",
   "details": {
+    "assets": {
+          "host01": [
+              {"file": "index.js", "target": "/root/setup", "chmod": "+x"},
+              {"file": "package.json", "target": "/root/setup"}
+            ]
+        },
     "steps": [
       {
         "title": "Step 1",
@@ -11,6 +17,7 @@
       },
       {
         "title": "Step 2",
+        "code": "intro-foreground.sh",
         "text": "step2.md"
       },
       {
@@ -67,9 +74,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md",
-      "code": "intro-foreground.sh"
-    },
+      "text": "intro.md"
+  },
     "finish": {
       "text": "finish.md"
     }
@@ -80,4 +86,5 @@
   "backend": {
     "imageid": "ubuntu:1804"
   }
+
 }

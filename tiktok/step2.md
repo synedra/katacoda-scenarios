@@ -8,13 +8,8 @@ In this step, we will:
 ---
 
 # 1. Prepare the environment
-First, change into the TikTok directory
-`cd tik-tok`{{execute}}
+Wait for the npm install to finish, and once the prompt comes back in the console, run the setup script to get your environment variables all set up.
 
-Next, install all the node modules you need.  This will take a few minutes, please be patient :-)
-`npm install`{{execute}}
-
-And now run the setup script to get your environment variables all set up.
 `node setup.js`{{execute}}
 
 Follow the prompts in the console to set up your admin and db tokens.
@@ -43,4 +38,4 @@ Try the simpler call to make sure it works:
 
 `http :/rest/v1/keyspaces`{{execute}}
 
-Great, it's time to dive deeper into the Stargate APIs to see what they can do for you.
+Cool!  Let's get started building the TikTok clone.  
