@@ -7,8 +7,16 @@ In this step, we will:
 
 ---
 
-# 1. Get API and DB tokens
-Follow the prompts in the console to set up your admin and db tokens set up.## 3. Verify Credentials
+# 1. Prepare the environment
+First, change into the TikTok directory
+`cd tik-tok`{{execute}}
+
+Next, install all the node modules you need
+`npm install`{{execute}}
+
+Follow the prompts in the console to set up your admin and db tokens.
+
+# 2. Verify Credentials
 
 First, install a tool to work with the API endpoints:
 
