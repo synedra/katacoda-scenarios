@@ -11,7 +11,7 @@ In this step, we will:
 First, change into the TikTok directory
 `cd tik-tok`{{execute}}
 
-Next, install all the node modules you need
+Next, install all the node modules you need.  This will take a few minutes, please be patient :-)
 `npm install`{{execute}}
 
 And now run the setup script to get your environment variables all set up.
