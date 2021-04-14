@@ -8,7 +8,15 @@ In this step, we will:
 ---
 
 # 1. Prepare the environment
-Wait for the npm install to finish, and once the prompt comes back in the console, run the setup script to get your environment variables all set up.
+Change into the setup directory.
+
+`cd setup`{{execute}}
+
+Run 'npm install' to get requirements.
+
+`npm install`{{execute}}
+
+Run setup.js
 
 `node setup.js`{{execute}}
 
