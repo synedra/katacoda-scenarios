@@ -6,7 +6,7 @@
   "details": {
     "assets": {
           "host01": [
-              {"file": "index.js", "target": "/root/setup", "chmod": "+x"},
+              {"file": "setup.js", "target": "/root/setup", "chmod": "+x"},
               {"file": "package.json", "target": "/root/setup"}
             ]
         },
