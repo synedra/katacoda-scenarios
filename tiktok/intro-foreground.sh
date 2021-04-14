@@ -1,4 +1,3 @@
 cd setup
 npm install
-node setup.js
-cd ..
+node setup.js; cd ..
