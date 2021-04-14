@@ -20,31 +20,30 @@ Copy your .env file from the parent directory to make your environment variables
 
 # 2. Clean up the template
 
-Your template has extra files and lines you don't need for your application.
+Your template has extra files and content you don't need for your application.
 
 First, remove the extra files:
 
 `rm -rf yarn.lock src/App.test.js reportWebVitals.js setupTests.js`{{execute}}
 
-In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
-1. `import logo from './logo.svg';`
-2. `<img src={logo} className="App-logo" alt="logo" />`
-
-In `astra-tik-tok/src/index.js`{{open}}, remove the following lines
-1. `import reportWebVitals from './reportWebVitals';`
-2. `reportWebVitals();`
-
-Install the modules for the application.  This will take some time, please be patient:
-`npm install`{{execute}}
-
-While you're waiting, let's take a look at the main files we'll be working with.  You made minor changes to them above, but here's a little more info about how this all works.
+Let's take a look at the main files we'll be working with.
 
 * `astra-tik-tok/src/index.js`{{open}} - this file is where everything starts.  At it's simplest, it will look at the App component, and generate it into the indicated place in... 
 * `astra-tik-tok/src/index.html`{{open}} - the "root" div specified as document.getElementById('root').
 * `astra-tik-tok/src/App.js`{{open}} - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering.
 
+In `astra-tik-tok/src/App.js`{{open}}, remove the following content
+1. `import logo from './logo.svg';`
+
+2. `<img src={logo} className="App-logo" alt="logo" />`
+
+In `astra-tik-tok/src/index.js`{{open}}, remove the following content
+1. `import reportWebVitals from './reportWebVitals';`
+
+2. `reportWebVitals();`
+
 Start up the application:
-`npm run start`{{execute}}
+`yarn start`{{execute}}
 
 Visit it <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">here</a>
 
@@ -54,8 +53,8 @@ Now, the display you see there is the default react App component, but we want t
 import './App.css'
 const App = () => {
   return (
-    <div className="App">
-    </div>
+    &lt;div className="App"&gt;
+    &lt;/div&gt;
   );
 }
 export default App
