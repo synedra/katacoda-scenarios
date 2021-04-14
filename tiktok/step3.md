@@ -27,12 +27,12 @@ First, remove the extra files:
 `rm -rf yarn.lock src/App.test.js reportWebVitals.js setupTests.js`{{execute}}
 
 In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
-* `import logo from './logo.svg';`
-* `<img src={logo} className="App-logo" alt="logo" />`
+1. `import logo from './logo.svg';`
+2. `<img src={logo} className="App-logo" alt="logo" />`
 
 In `astra-tik-tok/src/index.js`{{open}}, remove the following lines
-* `import reportWebVitals from './reportWebVitals';`
-* `reportWebVitals();`
+1. `import reportWebVitals from './reportWebVitals';`
+2. `reportWebVitals();`
 
 Install the modules for the application.  This will take some time, please be patient:
 `npm install`{{execute}}
@@ -52,14 +52,11 @@ Now, the display you see there is the default react App component, but we want t
 
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="replace">
 import './App.css'
-
 const App = () => {
   return (
     <div className="App">
-
     </div>
   );
 }
-
 export default App
 </pre>
