@@ -59,3 +59,5 @@ const App = () => {
 }
 export default App
 </pre>
+
+Great job!  Next up, you'll learn about routes in react, and build a couple of routes for your application.
