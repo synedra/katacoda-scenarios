@@ -1,1 +1,1 @@
-`grep REGION ~/.astrarc` && `grep REGION .env` && echo "done"
+grep REGION ~/.astrarc && grep REGION setup/.env && echo "done"

@@ -98,7 +98,7 @@ let dbID = '';
 start();
 
 async function start() {
-	console.log(chalk.cyan('Checking your credentials...\n'));
+	console.log(chalk.yellow('Checking your credentials...\n'));
 
 	let creds = await getTokens()
 	if (!creds) {
@@ -106,9 +106,9 @@ async function start() {
 		process.exit(0);
 	}
 	axios.defaults.headers.common['Authorization'] = "Bearer " + process.env.ASTRA_DB_ADMIN_TOKEN;
-	console.log(chalk.cyan('Credentials set up, checking database'))
+	console.log(chalk.yellow('Credentials set up, checking database'))
 	dbID = await setUpDatabase();
-	console.log(chalk.cyan('Database setup: ' + dbID));
+	console.log(chalk.yellow('Database setup: ' + dbID));
 	process.exit()
 }
 
@@ -119,13 +119,13 @@ async function setUpDatabase() {
 		let db = createDB();
 		database = await findTikTokDatabase(true);
 	} else {
-		console.log(chalk.green('Found existing tiktok database'));
+		console.log(chalk.blue('Found existing tiktok database'));
 	}
 
 	dbID = database.id;
 
 	if (database.status != 'ACTIVE') {
-		console.log(chalk.green('     Current status is ' + database.status));
+		console.log(chalk.blue('     Current status is ' + database.status));
 
 		const astraClient = await astraRest.createClient({
 			applicationToken: process.env.ASTRA_DB_ADMIN_TOKEN,
