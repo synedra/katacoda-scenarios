@@ -13,9 +13,9 @@ In this step you will work with React Components to understand how they work, re
 ## Step 1 - Create the Component Files
 
 First up - make a directory and copy new files in
-`mkdir src/components`{{execute}}
+`mkdir src/components; touch src/components/Header.js; touch src/components/FollowersColumn.js`{{execute}}
 
-Create a Header.js file:
+Populate your Header file:
 <pre class="file" data-filename="root/astra-tik-tok/components/Header.js" data-target="replace">
 const Header = () => {
     return (

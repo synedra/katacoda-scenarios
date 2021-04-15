@@ -29,9 +29,9 @@ Add the following import statement to your index.js file.
 Now you need to create component pages for your Home and Upload components.
 
 Create the directory for the pages and touch the files.
-`mkdir -p src/pages; touch src/pages/Home.js; touch src/pages/Upload.js`
+`mkdir -p src/pages; touch src/pages/Home.js; touch src/pages/Upload.js`{{execute}}
 
-Open the `src/pages/Home.js`{{open}} file.
+Open the `astra-tik-tok/src/pages/Home.js`{{open}} file.
 
 Update the contents:
 <pre class="file" data-filename="root/astra-tik-tok/src/Home.js" data-target="replace">
@@ -45,7 +45,7 @@ const Home = () => {
 export default Home
 </pre>
 
-Open the `src/pages/Upload.js`{{open}} file.
+Open the `astra-tik-tok/src/pages/Upload.js`{{open}} file.
 
 Update the contents:
 <pre class="file" data-filename="root/astra-tik-tok/src/Upload.js" data-target="replace">
@@ -59,18 +59,13 @@ const Upload = () => {
 export default Upload
 </pre>
 
-Copy the src/App.js file to src/Upload.js
-`cp src/App.js src/Upload.js`{{execute}}
-
-Open the file: `astra-tik-tok/src/pages/Upload.js`{{open}}
-
-Change the three 'App' references in the file to 'Upload'
+## Update index.js
 
 It's time to make some changes to index.js.  Instead of keeping the App component in its own file we'll bring it into here for easier maintenance.
 
 In the index.js file, change the imports.  This will remove the App.js import command and add imports for Home and Upload, and set up the new App we need.  I'll go over that after you make the change.
 
-Make sure `astra-tik-tok/src/index.js` is open, then use the "copy" button to update the file.
+Make sure `astra-tik-tok/src/index.js`{{open}} is open, then use the "copy" button to update the file.
 
 <pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import App from './App';">
 import Home from './pages/Home'
