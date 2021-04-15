@@ -33,16 +33,19 @@ Let's take a look at the main files we'll be working with.
 * `astra-tik-tok/src/App.js`{{open}} - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering.
 
 In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
+
 `import logo from './logo.svg';`
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker="import logo from './logo.svg';"></pre>
+
 
 `<img src={logo} className="App-logo" alt="logo" />`
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker='<img src={logo} className="App-logo" alt="logo" />'></pre>
 
-1.
 In `astra-tik-tok/src/index.js`{{open}}, remove the following content
+
 `import reportWebVitals from './reportWebVitals';`
 <pre class="file" data-filename="root/astra-tik-tok/src/index.js" data-target="insert" data-marker="import reportWebVitals from './reportWebVitals';"></pre>
+
 
 `reportWebVitals();`
 <pre class="file" data-filename="root/astra-tik-tok/src/index.js" data-target="insert" data-marker="reportWebVitals();"></pre>
