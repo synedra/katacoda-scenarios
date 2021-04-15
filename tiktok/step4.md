@@ -19,7 +19,9 @@ Install the react-router-dom package:
 `cd astra-tik-tok`{{execute T2}}
 `yarn add react-router-dom`{{execute}}
 
-Add the following import statement to your index.js file (click the copy link, it'll do it for you)
+Open `astra-tik-tok/src/index.js`{{open}}
+
+Add the following import statement to your index.js file.
 <pre class="file" data-filename="astra-tik-tok/src/index.js" data-target="prepend">import { HashRouter, Route , Switch} from 'react-router-dom'</pre>
 
 # 2. Create component pages
@@ -70,7 +72,9 @@ The changes here are:
     2. Within this tag, add a <Switch> tag (from react-router-dom)
     3. Within the <Switch> tag, define the routes.  Be aware that the first route that matches "wins", so put more specific routes above the general ones as we have done here.
 
-Check in your original terminal to make sure your site is still running as expected by clicking the "Terminal" tab in the bottom of the IDE.  Go ahead and <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">visit it</a>.  If you go to the <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/upload">upload</a> endpoint, you should get a different result.  Anything else will default to '/' (Home).  
+Check in your original terminal to make sure your site is still running as expected by clicking the "Terminal" tab in the bottom of the IDE.  
+
+Go ahead and <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">visit it</a>.  If you go to the <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/upload">upload</a> endpoint, you will get a different blank page.  Anything else will default to '/' (Home).  
 
 Awesome!  We don't have any content yet, so the pages aren't much to look at.  Let's take care of that next!
 
