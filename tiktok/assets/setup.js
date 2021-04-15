@@ -175,7 +175,7 @@ async function findTikTokDatabase(retry) {
 		const timeout = 5000 * 10;
 		console.log(chalk.yellow('Waiting', timeout, 'ms'));
 		await wait(timeout);
-		output = findNetlifyDatabase(true);
+		output = findTikTokDatabase(true);
 	}
 
 	if (!process.env['ASTRA_DB_ID']) {

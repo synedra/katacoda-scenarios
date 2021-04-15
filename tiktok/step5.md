@@ -1,6 +1,5 @@
 # ⚒️ Adding some Content to the Components
 
-# Working with Components
 In this step you will work with React Components to understand how they work, returning HTML via the render() function.  Header and FollowersColumn React Components will be created to use in our app.
 
 **Objectives**
@@ -90,14 +89,91 @@ Make sure the header shows up correctly on your <a href="https://[[HOST_SUBDOMAI
 
 Open `astra-tik-tok/src/pages/Home.js`{{open}}
 
-### import FollowersColumn
-
-Add a line at the top of Home.js to import the FollowersColumn component
+*import FollowersColumn* - Add a line at the top of Home.js to import the FollowersColumn component
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="prepend">
 import FollowersColumn from '../pages/FollowersColumn'
 
 </pre>
 
-### Add a Container <div>
-Your home page layout will be easier to manage if you put the content in a container div.
+*Add a Container <div>* - Your home page layout will be easier to manage if you put the content in a container div.
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<div className="Home">'>
+&lt;div className="container"&gt;
+</pre>
 
+*Add FollowersColumn* - Add the FollowersContainer component into the container div.
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<div className="container">'>
+&lt;div className="container"&gt;
+&lt;FollowersColumn /&gt;
+</pre>
+
+*Add feed div* - Let's put a feed div in there as well, and move the home page H1 into that component.
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<FollowersColumn />'>
+&lt;FollowersColumn /&gt;
+    &lt;div className="feed"&gt; 
+        &lt;h1&gt;Home&lt;/h1&gt;
+    &lt; /div &gt;
+</pre>
+
+*Add suggested-box div* - create a place for a suggestion box to appear.
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='</div>'>
+&lt; /div &gt;
+&lt;div className="suggested-box"&gt;
+&lt; /div &gt;
+</pre>
+
+If any of those didn't work, you can create it from scratch.
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="replace">
+import FollowersColumn from '../pages/FollowersColumn'
+
+const Home = () => {
+  return (
+        &lt;div className="container"&gt;
+            &lt;FollowersColumn /&gt;
+            &lt;div className="feed"&gt; 
+                &lt;h1&gt;Home&lt;/h1&gt;
+            &lt; /div &gt;
+            &lt;div className="suggested-box"&gt;
+        &lt; /div &gt;
+  );
+}
+
+export default Home&lt; /div &gt;
+&lt;div className="suggested-box"&gt;
+&lt; /div &gt;
+</pre>
+
+## Step 4 - Style the Components
+You need to make your new components pretty.
+* Add the flex styling to the container
+* Make the feed white
+* Make the suggested-box blue. 
+
+Open `src/App.css`{{open}}
+
+In this file, add the new components to the end.
+
+<pre class="file" data-filename="astra-tik-toc/src/App.css" data-target="append">
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.feed {
+  background-color: white;
+  width: 500px;
+}
+
+.suggested-box {
+  background-color: blue;
+  width: 400px;
+  height: 400px;
+}
+
+</pre>
+
+## Step 5 - Check your Site
+
+<a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">Visit</a> your site to make sure the CSS is being rendered as you want.  It should look like this:
+![image](https://user-images.githubusercontent.com/77410784/114914386-11f91c80-9dd7-11eb-8e8c-17f055f3fc49.png)
+
+Not super stylish yet but we can see how the components are placed relative to each other.
