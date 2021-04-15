@@ -33,18 +33,19 @@ Let's take a look at the main files we'll be working with.
 * `astra-tik-tok/src/App.js`{{open}} - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering.
 
 In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
+`import logo from './logo.svg';`
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker="import logo from './logo.svg';"></pre>
 
+`<img src={logo} className="App-logo" alt="logo" />`
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker='<img src={logo} className="App-logo" alt="logo" />'></pre>
 
-1. `import logo from './logo.svg';`
-
-2. `<img src={logo} className="App-logo" alt="logo" />`
-
+1.
 In `astra-tik-tok/src/index.js`{{open}}, remove the following content
-1. `import reportWebVitals from './reportWebVitals';`
+`import reportWebVitals from './reportWebVitals';`
+<pre class="file" data-filename="root/astra-tik-tok/src/index.js" data-target="insert" data-marker="import reportWebVitals from './reportWebVitals';"></pre>
 
-2. `reportWebVitals();`
+`reportWebVitals();`
+<pre class="file" data-filename="root/astra-tik-tok/src/index.js" data-target="insert" data-marker="reportWebVitals();"></pre>
 
 # 3. Start up the server
 
@@ -56,6 +57,8 @@ Visit it <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments
 Now, the display you see there is the default react App component, but we want to make our own.  Let's go ahead and slim it down to the basics.
 
 # 3. Remove App Component Contents
+
+Clear out the unneeded stuff in your App.js file.  After you click the 'Copy to Editor' button your server should reload and going to the <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">site</a> now will have an empty page.
 
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="replace">
 import './App.css'
