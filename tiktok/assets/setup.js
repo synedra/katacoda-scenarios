@@ -119,13 +119,13 @@ async function setUpDatabase() {
 		let db = createDB();
 		database = await findTikTokDatabase(true);
 	} else {
-		console.log(chalk.blue('Found existing tiktok database'));
+		console.log(chalk.yellow('Found existing tiktok database'));
 	}
 
 	dbID = database.id;
 
 	if (database.status != 'ACTIVE') {
-		console.log(chalk.blue('     Current status is ' + database.status));
+		console.log(chalk.yellow('     Current status is ' + database.status));
 
 		const astraClient = await astraRest.createClient({
 			applicationToken: process.env.ASTRA_DB_ADMIN_TOKEN,

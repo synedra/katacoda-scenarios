@@ -32,7 +32,11 @@ Let's take a look at the main files we'll be working with.
 * `astra-tik-tok/src/index.html`{{open}} - the "root" div specified as document.getElementById('root').
 * `astra-tik-tok/src/App.js`{{open}} - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering.
 
-In `astra-tik-tok/src/App.js`{{open}}, remove the following content
+In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
+<pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker="import logo from './logo.svg';"></pre>
+
+<pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker='<img src={logo} className="App-logo" alt="logo" />'></pre>
+
 1. `import logo from './logo.svg';`
 
 2. `<img src={logo} className="App-logo" alt="logo" />`
@@ -42,12 +46,16 @@ In `astra-tik-tok/src/index.js`{{open}}, remove the following content
 
 2. `reportWebVitals();`
 
+# 3. Start up the server
+
 Start up the application:
 `yarn start`{{execute}}
 
 Visit it <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">here</a>
 
-Now, the display you see there is the default react App component, but we want to make our own.  Let's go ahead and slim it down to the basics:
+Now, the display you see there is the default react App component, but we want to make our own.  Let's go ahead and slim it down to the basics.
+
+# 3. Remove App Component Contents
 
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="replace">
 import './App.css'
