@@ -99,5 +99,5 @@ import FollowersColumn from '../pages/FollowersColumn'
 </pre>
 
 ### Add a Container <div>
-Your home page layout will be easier to manage if we put the content in a container div.
+Your home page layout will be easier to manage if you put the content in a container div.
 
