@@ -85,3 +85,19 @@ Add a Header to the App component, under the <HashRouter> tag.
 </pre>
 
 Make sure the header shows up correctly on your <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">site</a>.
+
+## Step 4 - Add the Home Layout to Home.js
+
+Open `astra-tik-tok/src/pages/Home.js`{{open}}
+
+### import FollowersColumn
+
+Add a line at the top of Home.js to import the FollowersColumn component
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="prepend">
+import FollowersColumn from '../pages/FollowersColumn'
+
+</pre>
+
+### Add a Container <div>
+Your home page layout will be easier to manage if we put the content in a container div.
+
