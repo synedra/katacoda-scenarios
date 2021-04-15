@@ -27,13 +27,14 @@ Copy the src/App.js file to src/Home.js
 `cp src/App.js src/Home.js`{{execute}}
 
 Open the file: `astra-tik-tok/src/Home.js`{{open}}
+
 Change the three 'App' references in the file to 'Home'
 
 Copy the src/App.js file to src/Upload.js
 `cp src/App.js src/Upload.js`{{execute}}
-Change the three 'App' references in the file to 'Upload'
 
 Open the file: `astra-tik-tok/src/Upload.js`{{open}}
+
 Change the three 'App' references in the file to 'Upload'
 
 It's time to make some changes to index.js.  Instead of keeping the App component in its own file we'll bring it into here for easier maintenance.
