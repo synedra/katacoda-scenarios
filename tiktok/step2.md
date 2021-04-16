@@ -29,17 +29,11 @@ First, install a tool to work with the API endpoints:
 
 Make a call to the API using httpie to make sure your credentials are working:
 
-`http --auth-type astra -a default: :/rest/v1/keyspaces`{{execute}}
+`http --auth-type astra -a tiktok: :/rest/v1/keyspaces`{{execute}}
 
 Pretty cool, right?  But I've set up a config file for you so you can make it even easier.
 
-First, you'll create the directory for the configuration file:
-
-`mkdir -p ~/.config/httpie`{{execute}}
-
-Now, download the config file:
-
-`wget https://raw.githubusercontent.com/synedra-datastax/ExploringStargate/main/config.json -O ~/.config/httpie/config.json`{{execute}}
+The scenario already create this file, which is in `/root/.config/httpie/config.json`
 
 Try the simpler call to make sure it works:
 
