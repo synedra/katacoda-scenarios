@@ -22,6 +22,9 @@ Create a git repository and store your code there.
 
 `git init`{{execute}}
 
+Copy the below command and put your email in quotes then hit return.
+`git config --global user.email`{{copy}}
+
 `git add -A`{{execute}}
 
 `git commit -a -m "Initial commit"`{{execute}}
@@ -32,7 +35,7 @@ Your template has extra files and content you don't need for your application.
 
 First, remove the extra files:
 
-`rm -rf yarn.lock src/App.test.js reportWebVitals.js setupTests.js`{{execute}}
+`git rm -rf yarn.lock src/App.test.js reportWebVitals.js setupTests.js`{{execute}}
 
 Let's take a look at the main files we'll be working with.
 
@@ -99,16 +102,30 @@ const App = () => {
 export default App
 </pre>
 
+<pre class="file" data-filename="root/astra-tik-tok/src/indexx.js" data-target="replace">
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
 
-Once you've made the change, go ahead <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">visit the site</a>, which should have an empty page.
+ReactDOM.render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMod&gt;,
+  document.getElementById('root')
+);
+</pre>
+
+Once you've made the change, go ahead and <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">visit the site</a>, which should have an empty page.
 </details>
 
 # 4. Commit to git
 
 Commit the changes to your repository, and tag the current commit for easier retrieval later 
-`git commit -a -m "Step 3 final"`{{execute}}
-`git tag -a STEP3 -m "Step 3 final"`{{execute}}
+`git commit -a -m "Step 3 final"`{{execute T2}}
+`git tag -a STEP3 -m "Step 3 final"`{{execute T2}}
 
 
 Great job!  Next up, you'll learn about routes in react, and build a couple of routes for your application.
