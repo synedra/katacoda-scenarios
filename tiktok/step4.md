@@ -12,11 +12,7 @@ Routing is the ability to move between different parts of an application when a 
 
 # 1. Install the routing module
 
-Start up a second terminal window:
-`echo "This is your second terminal"`{{execute T2}}
-
 Install the react-router-dom package:
-`cd astra-tik-tok`{{execute T2}}
 `yarn add react-router-dom`{{execute}}
 
 Open `astra-tik-tok/src/index.js`{{open}}
@@ -35,7 +31,7 @@ Open the `astra-tik-tok/src/pages/Home.js`{{open}} file.
 
 Update the contents:
 <pre class="file" data-filename="root/astra-tik-tok/src/Home.js" data-target="replace">
-import './App.css'
+import '../App.css'
 const Home = () => {
   return (
     &lt;div className="Home"&gt;
@@ -49,7 +45,7 @@ Open the `astra-tik-tok/src/pages/Upload.js`{{open}} file.
 
 Update the contents:
 <pre class="file" data-filename="root/astra-tik-tok/src/Upload.js" data-target="replace">
-import './App.css'
+import '../App.css'
 const Upload = () => {
   return (
     &lt;div className="Upload"&gt;

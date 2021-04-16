@@ -22,8 +22,9 @@ Create a git repository and store your code there.
 
 `git init`{{execute}}
 
-Copy the below command and put your email in quotes then hit return.
-`git config --global user.email`{{copy}}
+Copy the below command, paste it into the terminal and put your email in quotes then hit return.  It should end up looking like:
+`git config --global user.email "kirsten.hunter@datastax.com`
+`git config --global user.email `{{copy}}
 
 `git add -A`{{execute}}
 
@@ -35,7 +36,7 @@ Your template has extra files and content you don't need for your application.
 
 First, remove the extra files:
 
-`git rm -rf yarn.lock src/App.test.js reportWebVitals.js setupTests.js`{{execute}}
+`git rm -rf yarn.lock src/App.test.js src/reportWebVitals.js src/setupTests.js`{{execute}}
 
 Let's take a look at the main files we'll be working with.
 
@@ -124,8 +125,9 @@ Once you've made the change, go ahead and <a href="https://[[HOST_SUBDOMAIN]]-30
 # 4. Commit to git
 
 Commit the changes to your repository, and tag the current commit for easier retrieval later 
+`echo "adding terminal"`{{execute T2}}
+`cd astra-tik-tok`{{execute T2}}
 `git commit -a -m "Step 3 final"`{{execute T2}}
 `git tag -a STEP3 -m "Step 3 final"`{{execute T2}}
-
 
 Great job!  Next up, you'll learn about routes in react, and build a couple of routes for your application.

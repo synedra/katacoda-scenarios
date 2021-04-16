@@ -68,13 +68,13 @@ Change the contents to do a couple of things:
 Open `astra-tik-tok/src/index.js`{{open}}
 
 Import the Header component we just created:
-<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import Home from './pages/Home">
+<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import Upload from './pages/Upload'">
+import Upload from './pages/Upload'
 import Header from './components/Header'
-import Home from './pages/Home'
 </pre>
 
-<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="index.css">
-App.css
+<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import './index.css';">
+import './App.css';
 </pre>
 
 Add a Header to the App component, under the <HashRouter> tag.
@@ -103,7 +103,7 @@ import FollowersColumn from '../pages/FollowersColumn'
 *Add FollowersColumn* - Add the FollowersContainer component into the container div.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<div className="container">'>
 &lt;div className="container"&gt;
-&lt;FollowersColumn /&gt;
+    &lt;FollowersColumn /&gt;
 </pre>
 
 *Add feed div* - Let's put a feed div in there as well, and move the home page H1 into that component.
@@ -115,10 +115,10 @@ import FollowersColumn from '../pages/FollowersColumn'
 </pre>
 
 *Add suggested-box div* - create a place for a suggestion box to appear.
-<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='</div>'>
-&lt; /div &gt;
-&lt;div className="suggested-box"&gt;
-&lt; /div &gt;
+<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<h1>Home</h1>'>
+&lt;h1&gt;Home&lt;/h1&gt;
+    &lt; /div &gt;
+&lt;div className="suggested-box"&gt;&lt; /div &gt;
 </pre>
 
 If any of those didn't work, you can create it from scratch.
