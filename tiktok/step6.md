@@ -1,0 +1,40 @@
+# ⚒️ Getting Started with Astra/Stargate and Netlify
+
+In this step you will work with React Components to understand how they work, returning HTML via the render() function.  Header and FollowersColumn React Components will be created to use in our app.
+
+**Objectives**
+1. Brief introduction to Netlify
+2. Install modules
+3. Set up your netlify app with netlify-cli
+4. Add netlify serverless functions
+5. 
+
+
+---
+
+## Step 1. Brief introduction to Netlify
+
+Now it is time to start getting post data into the Cassandra database. To get data in, you are going to create a serverless function. For this, you are going to use Netlify and Netlify functions. This means that it is not necessary to write a server, everything can be done with Netlify functions. Netlify deploys the functions you write as full API endpoints and will even run them automatically in response to events. If you haven't heard of Netlify functions before, this is a good place to start.  If you want to read more about Netlify, visit the [Getting Started documentation](https://docs.netlify.com/cli/get-started/).
+
+## 2. Install modules.
+
+You need a few more modules moving forward:
+* netlify-cli gives you command line interfaces to netlify
+* axios is the http module we're using
+* @astrajs/collections is the astra node module we'll be using
+
+`npm install netlify-cli --save-dev
+grep netlify package.json
+npm install axios @astrajs/collections`{{execute}}
+
+## 3. Create Github Repository
+
+In order to work with netlify, the netlify system needs to be able to see your code, so you will create a new github repository for this purpose.  You'll use the command line interface to make it easy.
+
+First, install the gh tool:
+`snap install gh`
+
+Authenticate with the github service:
+`gh auth login`
+
+

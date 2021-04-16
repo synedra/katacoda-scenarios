@@ -3,6 +3,7 @@
 **Objectives**
 In this step, we will:
 1. Set up credentials
+2. Install HTTPie
 3. Verify Credentials
 
 ---
@@ -10,15 +11,13 @@ In this step, we will:
 # 1. Prepare the environment
 Change into the setup directory.
 
-`cd setup`{{execute}}
-
 Run 'npm install' to get requirements.
 
 `npm install; clear`{{execute}}
 
 Run setup.js
 
-`node setup.js; cd ..`{{execute}}
+`node setup.js`{{execute}}
 
 Follow the prompts in the console to set up your admin and db tokens.
 
@@ -32,7 +31,7 @@ Make a call to the API using httpie to make sure your credentials are working:
 
 `http --auth-type astra -a default: :/rest/v1/keyspaces`{{execute}}
 
-Pretty cool, right?  Let's configure httpie to work exactly how you want, you we don't have to specify the auth-type and .astrarc section.
+Pretty cool, right?  But I've set up a config file for you so you can make it even easier.
 
 First, you'll create the directory for the configuration file:
 

@@ -6,8 +6,9 @@
   "details": {
     "assets": {
           "host01": [
-              {"file": "setup.js", "target": "/root/setup", "chmod": "+x"},
-              {"file": "package.json", "target": "/root/setup"}
+              {"file": "setup.js", "target": "/root", "chmod": "+x"},
+              {"file": "package.json", "target": "/root"},
+              {"file": "config.json", "target": "/root/.config/httpie"}
             ]
         },
     "steps": [

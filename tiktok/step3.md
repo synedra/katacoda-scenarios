@@ -16,7 +16,15 @@ This will create the needed files in the 'astra-tik-tok' directory and change yo
 
 Copy your .env file from the parent directory to make your environment variables available to the application.
 
-`cp ../setup/.env .`{{execute}}
+`cp ../.env .`{{execute}}
+
+Create a git repository and store your code there.
+
+`git init`{{execute}}
+
+`git add -A`{{execute}}
+
+`git commit -a -m "Initial commit"`{{execute}}
 
 # 2. Clean up the template
 
@@ -28,15 +36,16 @@ First, remove the extra files:
 
 Let's take a look at the main files we'll be working with.
 
-* `astra-tik-tok/src/index.js`{{open}} - this file is where everything starts.  At it's simplest, it will look at the App component, and generate it into the indicated place in... 
-* `astra-tik-tok/src/index.html`{{open}} - the "root" div specified as document.getElementById('root').
-* `astra-tik-tok/src/App.js`{{open}} - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering.
+* `astra-tik-tok/src/index.js` - this file is where everything starts.  At it's simplest, it will look at the App component, and generate it into the indicated place in... 
+
+* `astra-tik-tok/src/index.html` - the "root" div specified as document.getElementById('root').
+
+* `astra-tik-tok/src/App.js` - this file defines your component, and is used by index.js to generate content which it passes along to index.html for rendering.
 
 In `astra-tik-tok/src/App.js`{{open}}, remove the following lines
 
 `import logo from './logo.svg';`
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker="import logo from './logo.svg';"></pre>
-
 
 `<img src={logo} className="App-logo" alt="logo" />`
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="insert" data-marker='<img src={logo} className="App-logo" alt="logo" />'></pre>
@@ -73,5 +82,33 @@ const App = () => {
 }
 export default App
 </pre>
+
+
+<details>
+  <summary>Troubleshooting</summary>
+If anything seems to have gone wrong, you can update each of the files to their expected content with these buttons.
+
+<pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="replace">
+import './App.css'
+const App = () => {
+  return (
+    &lt;div className="App"&gt;
+    &lt;/div&gt;
+  );
+}
+export default App
+</pre>
+
+
+
+Once you've made the change, go ahead <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">visit the site</a>, which should have an empty page.
+</details>
+
+# 4. Commit to git
+
+Commit the changes to your repository, and tag the current commit for easier retrieval later 
+`git commit -a -m "Step 3 final"`{{execute}}
+`git tag -a STEP3 -m "Step 3 final"`{{execute}}
+
 
 Great job!  Next up, you'll learn about routes in react, and build a couple of routes for your application.

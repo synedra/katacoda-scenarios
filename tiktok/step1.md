@@ -22,9 +22,12 @@ _ahem...for those of you familiar with Apache Cassandra, yes, I just said you co
 
 ### 1. Register and Sign In to Astra
 
+<details>
+  <summary>If you are new to Astra</summary>
+
 The `ASTRA` service is available at url [https://astra.datastax.com](https://dtsx.io/workshop). `ASTRA` is the simplest way to run Cassandra with zero operations at all - just push the button and get your cluster. `Astra` offers $25 credit/month and requires no credit card to setup.  That $25 gives you a lot of storage space and transactions, and you have no worries of being accidentally charged.
 
-### ✅ Step 1a. Use the dialogs to create an account and/or sign in
+### ✅ Step 1a. Use the dialogs to create an account
 You can use your `Github`, `Google` accounts or register with an `email`.
 
 Make sure to chose a password with minimum 8 characters, containing upper and lowercase letters, at least one number and special character
@@ -32,18 +35,35 @@ Make sure to chose a password with minimum 8 characters, containing upper and lo
 
 ![Registration Image](https://github.com/DataStax-Examples/battlestax/blob/master/tutorial/login-1000.png?raw=true)
 
-### 2. Configure and create your database
-✅ 1. All of our databases are now serverless, so just click "Create Database" in the left pane and you're good to go.
+You will automatically be asked to create a database.
 
-✅ 2. **Choose your plan:** The "Pay as You Go" plan gives you $25/month of traffic and storage, and does not require a credit card - if you get close to the limit we'll let you know.  Click "Get Started."
+✅ **Choose your plan:** The "Pay as You Go" plan gives you $25/month of traffic and storage, and does not require a credit card - if you get close to the limit we'll let you know.  Click "Get Started."
 
-✅ 3. **Name your Database:** With our new serverless plan you can have as many databases as you need.  For this workshop, use "tiktok" as the database name and "react" as the Keyspace name.  If you already had an account you can create a new one with the blue "Create Database" button in the left hand pane.
+✅ **Name your Database:** With our new serverless plan you can have as many databases as you need.  For this workshop, use "workshops" as the database name and "tiktok" as the Keyspace name.  
 
 ✅ 4. **Select a cloud provider:** You can use either GCP or AWS.  Chose a region that's geographically close to you.
 
 ✅ 5. **Click `Create Database`**
+</details>
 
-### 3. Let Astra Start Up
+<details>
+  <summary>If you already have an account</summary
+
+### ✅ Log in to Astra
+- [Log in to Astra](https://dtsx.io/workshop)
+
+✅ **Create database:** Click the "Create Database" button in the left hand pane.
+
+✅ **Choose your plan:** The "Pay as You Go" plan gives you $25/month of traffic and storage, and does not require a credit card - if you get close to the limit we'll let you know.  Click "Get Started."
+
+✅ **Name your Database:** With our new serverless plan you can have as many databases as you need.  For this workshop, use "workshops" as the database name and "tiktok" as the Keyspace name.  
+
+✅ 4. **Select a cloud provider:** You can use either GCP or AWS.  Chose a region that's geographically close to you.
+
+✅ 5. **Click `Create Database`**
+</details>
+
+### Let Astra Start Up
 Honestly, there's not much to do here, but wait a couple minutes for your Astra database to start up. Once completed, you will have a fully managed Apache Cassandra database ready to rock and power your app.
 
 You will see your new database `Pending` or `Initializing` in the Dashboard.

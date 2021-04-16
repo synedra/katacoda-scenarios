@@ -10,19 +10,29 @@ const axios = require('axios');
 const dotenv = require("parsenv");
 const jq = require('node-jq');
 
+// Set these to change which db/ks you want
+const astra_keyspace = "tiktok"
+const astra_database = "workshops"
+const astra_section = "tiktok"
+
+
 let response = '';
 const envpath = '.env'
 if (!fs.existsSync(envpath)) {
 	fs.closeSync(fs.openSync(envpath, 'w'));
 }
 const astrapath = os.homedir() + '/.astrarc'
+const astraconfig = new ConfigParser
+    
+if (!fs.existsSync(astrapath)) {
+	fs.closeSync(fs.openSync(astrapath, 'w'));
+} 
+
+astraconfig.addSection(astra_section)
 
 const config = {
     path: envpath
 };
-
-const astraconfig = new ConfigParser
-astraconfig.addSection('default')
 
 dotenv.config(config)
 
@@ -57,27 +67,28 @@ async function getTokens() {
 
 			console.log('Login to Astra at https://dstx.io/workshops')
 			console.log('After login, you can create a database.')
-			console.log('    database: tiktok')
-			console.log('    keyspace: entries')
-			console.log('Click on the database name (tiktok) to view details.')
-			console.log('Click on the Settings tab at the top of the screen')
+			console.log('    database: ' + astra_database)
+			console.log('    keyspace: ' + astra_keyspace)
+			console.log('Click on your name in the left-hand column')
+			console.log('In the dropdown, select "Organization Settings"')
+			console.log('    Select "Token Management" from the left-hand column')
+			console.log('    Select "Database Administrator" in the Role dropdown')
+			console.log('    Click "Generate Token"')
+			console.log('    Save to CSV if you want to access it later')
 			
-			process.env['ASTRA_DB_ADMIN_TOKEN']= await question("Create an application token for Database Administrator\n    (save to CSV if desired)\n    and paste the 'Token' value here, and hit return:\n")
+			process.env['ASTRA_DB_ADMIN_TOKEN']= await question("Paste the 'Token' value here (starts with AstraCS) and hit return:\n")
 			process.env['ASTRA_DB_ADMIN_TOKEN'] = process.env['ASTRA_DB_ADMIN_TOKEN'].replace(/"/g,"");
 			dotenv.edit({ ASTRA_DB_ADMIN_TOKEN: process.env['ASTRA_DB_ADMIN_TOKEN']});
-			astraconfig.set('default','ASTRA_DB_ADMIN_TOKEN', process.env['ASTRA_DB_ADMIN_TOKEN'])
-			process.env['ASTRA_DB_APPLICATION_TOKEN'] = await question("Create an application token for API Admin User \n    (save to CSV if desired)\n    and paste the 'Token' value here and hit return:\n")
-			process.env['ASTRA_DB_APPLICATION_TOKEN'] = process.env['ASTRA_DB_APPLICATION_TOKEN'].replace(/"/g,"");
-			dotenv.edit({ ASTRA_DB_APPLICATION_TOKEN: process.env['ASTRA_DB_APPLICATION_TOKEN']});
-			astraconfig.set('default', 'ASTRA_DB_APPLICATION_TOKEN', process.env['ASTRA_DB_APPLICATION_TOKEN'])
+			astraconfig.set(astra_section,'ASTRA_DB_ADMIN_TOKEN', process.env['ASTRA_DB_ADMIN_TOKEN'])
+			process.env['ASTRA_DB_APPLICATION_TOKEN'] = process.env['ASTRA_DB_ADMIN_TOKEN']
+			dotenv.edit({ ASTRA_DB_APPLICATION_TOKEN: process.env['ASTRA_DB_ADMIN_TOKEN']});
+			astraconfig.set(astra_section, 'ASTRA_DB_APPLICATION_TOKEN', process.env['ASTRA_DB_ADMIN_TOKEN'])
 			dotenv.write(config)
 			dotenv.config(config)
-			astraconfig.write(astrapath)
 			return dotenv;
 		}
 		return dotenv;
 }
-
 
 async function requestWithRetry(astraClient, url) {
 	const MAX_RETRIES = 20;
@@ -112,14 +123,14 @@ async function start() {
 	process.exit()
 }
 
-// First, check for a tiktok database
+// First, check for a database
 async function setUpDatabase() {
-	let database = await findTikTokDatabase(false);
+	let database = await findWorkShopDatabase(false);
 	if (!database.id || database.status == 'TERMINATING') {
 		let db = createDB();
-		database = await findTikTokDatabase(true);
+		database = await findWorkShopDatabase(true);
 	} else {
-		console.log(chalk.yellow('Found existing tiktok database'));
+		console.log(chalk.yellow('Found existing' + astra_database + ' database'));
 	}
 
 	dbID = database.id;
@@ -136,24 +147,24 @@ async function setUpDatabase() {
 	}
 
 	// Check for the keyspace
-	console.log(chalk.green('Checking for classes keyspace'));
+	console.log(chalk.green('Checking for keyspace'));
 
 	const astraClient = await astraRest.createClient({
 		applicationToken: process.env.ASTRA_DB_ADMIN_TOKEN,
 		baseUrl: 'https://api.astra.datastax.com',
 	});
 	response = await astraClient.get('/v2/databases/' + dbID);
-	if (response.data.info.keyspaces.indexOf('classes') != -1) {
-		console.log(chalk.green('     Classes keyspace found'));
+	if (response.data.info.keyspaces.indexOf(astra_keyspace) != -1) {
+		console.log(chalk.green('     ' + astra_keyspace + ' keyspace found'));
 		return dbID;
 	} else {
-		response = await astraClient.post('/v2/databases/' + dbID + '/keyspaces/classes');
-		console.log(chalk.yellow('     Created new classes keyspace'));
+		response = await astraClient.post('/v2/databases/' + dbID + '/keyspaces/' + astra_keyspace);
+		console.log(chalk.yellow('     Created new ' + astra_keyspace + ' keyspace'));
 		return dbID;
 	}
 }
 
-async function findTikTokDatabase(retry) {
+async function findWorkShopDatabase(retry) {
 	const astraClient = await astraRest.createClient({
 		applicationToken: process.env.ASTRA_DB_ADMIN_TOKEN,
 		baseUrl: 'https://api.astra.datastax.com',
@@ -167,7 +178,7 @@ async function findTikTokDatabase(retry) {
 		input: 'json',
 	});
 	JSON.parse(parseoutput).forEach((database) => {
-		if (database.name == 'tiktok') {
+		if (database.name == astra_database) {
 			output = database;
 		}
 	});
@@ -175,35 +186,32 @@ async function findTikTokDatabase(retry) {
 		const timeout = 5000 * 10;
 		console.log(chalk.yellow('Waiting', timeout, 'ms'));
 		await wait(timeout);
-		output = findTikTokDatabase(true);
+		output = findWorkShopDatabase(true);
 	}
-
-	if (!process.env['ASTRA_DB_ID']) {
-		dotenv.edit({ ASTRA_DB_ID: output.id});
-		astraconfig.set('default','ASTRA_DB_ID',output.id)
+        astraconfig.read(astrapath)
+        dotenv.edit({ ASTRA_DB_ID: output.id});
+		astraconfig.set(astra_section,'ASTRA_DB_ID',output.id)
 		dotenv.edit({ ASTRA_DB_REGION: output.region});
-		astraconfig.set('default','ASTRA_DB_REGION',output.region)
-		dotenv.edit({ ASTRA_DB_KEYSPACE: output.keyspace});
-		astraconfig.set('default','ASTRA_DB_KEYSPACE', output.keyspace)
+		astraconfig.set(astra_section,'ASTRA_DB_REGION',output.region)
+		dotenv.edit({ ASTRA_DB_KEYSPACE: astra_keyspace});
+		astraconfig.set(astra_section,'ASTRA_DB_KEYSPACE', astra_keyspace)
 		
 		dotenv.write(config)
-		dotenv.write(astraconfig)
-		dotenv.config(config)
 		astraconfig.write(astrapath)
-	}
+		dotenv.config(config)
 	return output;
 }
 
 async function createDB() {
-	console.log(chalk.blue('Creating new tiktok database'));
+	console.log(chalk.green('Creating new database'));
 	const astraClient = await astraRest.createClient({
 		applicationToken: process.env.ASTRA_DB_ADMIN_TOKEN,
 		baseUrl: 'https://api.astra.datastax.com',
 	});
 	try {
 		response = await astraClient.post('/v2/databases', {
-			name: 'tiktok',
-			keyspace: 'entries',
+			name: astra_database,
+			keyspace: astra_keyspace,
 			cloudProvider: 'GCP',
 			tier: 'serverless',
 			capacityUnits: 1,
