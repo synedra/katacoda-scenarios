@@ -128,9 +128,13 @@ Once you've made the change, go ahead and <a href="https://[[HOST_SUBDOMAIN]]-30
 # 4. Commit to git
 
 Commit the changes to your repository, and tag the current commit for easier retrieval later 
+
 `echo "adding terminal"`{{execute T2}}
+
 `cd astra-tik-tok`{{execute T2}}
+
 `git commit -a -m "Step 3 final"`{{execute T2}}
+
 `git tag -a STEP3 -m "Step 3 final"`{{execute T2}}
 
 Great job!  Next up, you'll learn about routes in react, and build a couple of routes for your application.

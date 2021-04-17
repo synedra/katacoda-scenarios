@@ -30,7 +30,7 @@ const Header = () => {
 export default Header
 </pre>
 
-Open `astra-tik-tok/src/components/Upload.js`{{open}}
+Open `astra-tik-tok/src/components/FollowersColumn.js`{{open}}
 
 <pre class="file" data-filename="root/astra-tik-tok/components/FollowersColumn.js" data-target="replace">
 const FollowersColumn = () => {
@@ -74,12 +74,7 @@ Open `astra-tik-tok/src/App.js`{{open}}
 
 Import the Header component we just created:
 <pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="prepend">
-import Header from './components/Header'
-</pre>
-
-<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import './index.css';">
-import './App.css';
-</pre>
+import Header from './components/Header</pre>
 
 Open `astra-tik-tok/src/App.js`{{open}}
 Add a Header to the App component, under the <HashRouter> tag.
@@ -96,19 +91,16 @@ Open `astra-tik-tok/src/pages/Home.js`{{open}}
 
 *import FollowersColumn* - Add a line at the top of Home.js to import the FollowersColumn component
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="prepend">
-import FollowersColumn from '../components/FollowersColumn'
-</pre>
+import FollowersColumn from '../components/FollowersColumn'</pre>
 
 *Add a Container <div>* - Your home page layout will be easier to manage if you put the content in a container div.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<div className="Home">'>
-&lt;div className="container"&gt;
-</pre>
+&lt;div className="container"&gt;</pre>
 
 *Add FollowersColumn* - Add the FollowersContainer component into the container div.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<div className="container">'>
 &lt;div className="container"&gt;
-        &lt;FollowersColumn /&gt;
-</pre>
+        &lt;FollowersColumn /&gt;</pre>
 
 *Add feed div* - Let's put a feed div in there as well, and move the home page H1 into that component.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<FollowersColumn />'>
@@ -120,10 +112,9 @@ import FollowersColumn from '../components/FollowersColumn'
 
 *Add suggested-box div* - create a place for a suggestion box to appear.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<h1>Home</h1>'>
-&lt;h1&gt;Home&lt;/h1&gt;
-    &lt; /div &gt;
-&lt;div className="suggested-box"&gt;&lt; /div &gt;
-</pre>
+            &lt;h1&gt;Home&lt;/h1&gt;
+                    &lt; /div &gt;
+            &lt;div className="suggested-box"&gt;</pre>
 
 If any of those didn't work, you can create it from scratch.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="replace">

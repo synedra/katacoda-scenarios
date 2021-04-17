@@ -61,14 +61,6 @@ It's time to make some changes to index.js.  Instead of keeping the App componen
 
 In the index.js file, change the imports.  This will add imports for Home and Upload.  I'll go over that after you make the change.
 
-Make sure `astra-tik-tok/src/index.js`{{open}} is open, then use the "copy" button to update the file.
-
-<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import App from './App';">
-import App from './App'
-import Home from './pages/Home'
-import Upload from './pages/Upload'
-</pre>
-
 ## Add structure to App.js
 
 It's time to get App.js ready to do some real work.
@@ -81,7 +73,10 @@ You'll be making a few changes with this:
 
 <pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="replace">
 import { HashRouter, Route , Switch} from 'react-router-dom'
+import Home from './pages/Home'
+import Upload from './pages/Upload'
 import './App.css'
+
 const App = () => {
   return (
     &lt;HashRouter&gt;
