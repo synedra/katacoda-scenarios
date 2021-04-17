@@ -92,7 +92,6 @@ Open `astra-tik-tok/src/pages/Home.js`{{open}}
 *import FollowersColumn* - Add a line at the top of Home.js to import the FollowersColumn component
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="prepend">
 import FollowersColumn from '../pages/FollowersColumn'
-
 </pre>
 
 *Add a Container <div>* - Your home page layout will be easier to manage if you put the content in a container div.
@@ -103,15 +102,15 @@ import FollowersColumn from '../pages/FollowersColumn'
 *Add FollowersColumn* - Add the FollowersContainer component into the container div.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<div className="container">'>
 &lt;div className="container"&gt;
-    &lt;FollowersColumn /&gt;
+        &lt;FollowersColumn /&gt;
 </pre>
 
 *Add feed div* - Let's put a feed div in there as well, and move the home page H1 into that component.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<FollowersColumn />'>
 &lt;FollowersColumn /&gt;
-    &lt;div className="feed"&gt; 
-        &lt;h1&gt;Home&lt;/h1&gt;
-    &lt; /div &gt;
+        &lt;div className="feed"&gt; 
+            &lt;h1&gt;Home&lt;/h1&gt;
+        &lt; /div &gt;
 </pre>
 
 *Add suggested-box div* - create a place for a suggestion box to appear.
@@ -128,18 +127,16 @@ import FollowersColumn from '../pages/FollowersColumn'
 const Home = () => {
   return (
         &lt;div className="container"&gt;
-            &lt;FollowersColumn /&gt;
-            &lt;div className="feed"&gt; 
-                &lt;h1&gt;Home&lt;/h1&gt;
-            &lt; /div &gt;
-            &lt;div className="suggested-box"&gt;
-        &lt; /div &gt;
+                &lt;FollowersColumn /&gt;
+                &lt;div className="feed"&gt; 
+                    &lt;h1&gt;Home&lt;/h1&gt;
+                &lt; /div &gt;
+            &lt;div className="suggested-box"&gt;&lt; /div &gt;
+        &lt;/div&gt;
   );
 }
 
-export default Home&lt; /div &gt;
-&lt;div className="suggested-box"&gt;
-&lt; /div &gt;
+export default Home
 </pre>
 
 ## Step 4 - Style the Components

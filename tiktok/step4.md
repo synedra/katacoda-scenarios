@@ -59,33 +59,15 @@ export default Upload
 
 It's time to make some changes to index.js.  Instead of keeping the App component in its own file we'll bring it into here for easier maintenance.
 
-In the index.js file, change the imports.  This will remove the App.js import command and add imports for Home and Upload, and set up the new App we need.  I'll go over that after you make the change.
+In the index.js file, change the imports.  This will add imports for Home and Upload.  I'll go over that after you make the change.
 
 Make sure `astra-tik-tok/src/index.js`{{open}} is open, then use the "copy" button to update the file.
 
 <pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import App from './App';">
+import App from './App'
 import Home from './pages/Home'
 import Upload from './pages/Upload'
-
-const App = () => {
-  return (
-    &lt;HashRouter&gt;
-    &lt;Switch&gt;
-      &lt;Route path= "/upload" component={Upload}/&gt;
-      &lt;Route path= "/" component={Home}/&gt;
-    &lt;/Switch&gt;
-  &lt;/HashRouter&gt;
-  );
-}
 </pre>
-
-The changes here are:
-* Delete the "import App from './App' line.  We are going to be putting the App component definition directly in this file so we're not using App.js anymore.
-* Import Home and Upload from the component files we just created.
-* Define the App component:
-    1. Add a <HashRouter> tag.  
-    2. Within this tag, add a <Switch> tag (from react-router-dom)
-    3. Within the <Switch> tag, define the routes.  Be aware that the first route that matches "wins", so put more specific routes above the general ones as we have done here.
 
 Check in your original terminal to make sure your site is still running as expected by clicking the "Terminal" tab in the bottom of the IDE.  
 
