@@ -15,10 +15,10 @@ Routing is the ability to move between different parts of an application when a 
 Install the react-router-dom package:
 `yarn add react-router-dom`{{execute}}
 
-Open `astra-tik-tok/src/index.js`{{open}}
+Open `astra-tik-tok/src/App.js`{{open}}
 
 Add the following import statement to your index.js file.
-<pre class="file" data-filename="astra-tik-tok/src/index.js" data-target="prepend">import { HashRouter, Route , Switch} from 'react-router-dom'</pre>
+<pre class="file" data-filename="astra-tik-tok/src/App.js" data-target="prepend">import { HashRouter, Route , Switch} from 'react-router-dom'</pre>
 
 # 2. Create component pages
 
@@ -69,9 +69,37 @@ import Home from './pages/Home'
 import Upload from './pages/Upload'
 </pre>
 
+## Add structure to App.js
+
+It's time to get App.js ready to do some real work.
+
+You'll be making a few changes with this:
+* Importing the HashRouter, Route and Switch components
+* Adding a <Hashrouter> at the top of your App component
+* In the <Hashrouter>, inserting a Switch component to direct queries to the right place
+* Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match "wins" so you can land in some frustration if you don't keep this in mind.
+
+<pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="replace">
+import { HashRouter, Route , Switch} from 'react-router-dom'
+import './App.css'
+const App = () => {
+  return (
+    <HashRouter>
+    <Switch>
+      <Route path= "/upload" component={Upload}/>
+      <Route path= "/" component={Home}/>
+    </Switch>
+  </HashRouter>
+  );
+}
+
+export default App
+</pre>
+
 Check in your original terminal to make sure your site is still running as expected by clicking the "Terminal" tab in the bottom of the IDE.  
 
 Go ahead and <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">visit it</a>.  If you go to the <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/upload">upload</a> endpoint, you will get a different blank page.  Anything else will default to '/' (Home).  
+
 
 Awesome!  We don't have any content yet, so the pages aren't much to look at.  Let's take care of that next!
 

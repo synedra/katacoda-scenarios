@@ -105,7 +105,8 @@ const App = () => {
 export default App
 </pre>
 
-<pre class="file" data-filename="root/astra-tik-tok/src/indexx.js" data-target="replace">
+For index.js:
+<pre class="file" data-filename="root/astra-tik-tok/src/index.js" data-target="replace">
 
 import React from 'react';
 import ReactDOM from 'react-dom';

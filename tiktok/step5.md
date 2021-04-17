@@ -15,6 +15,9 @@ First up - make a directory and copy new files in
 `mkdir src/components; touch src/components/Header.js; touch src/components/FollowersColumn.js`{{execute}}
 
 Populate your Header file:
+
+Open `astra-tik-tok/src/components/Header.js`{{open}}
+
 <pre class="file" data-filename="root/astra-tik-tok/components/Header.js" data-target="replace">
 const Header = () => {
     return (
@@ -26,6 +29,8 @@ const Header = () => {
   
 export default Header
 </pre>
+
+Open `astra-tik-tok/src/components/Upload.js`{{open}}
 
 <pre class="file" data-filename="root/astra-tik-tok/components/FollowersColumn.js" data-target="replace">
 const FollowersColumn = () => {
@@ -63,13 +68,12 @@ Change the contents to do a couple of things:
 }
 </pre>
 
-## Step 3 - Add the Header to index.js
+## Step 3 - Add the Header to App.js
 
-Open `astra-tik-tok/src/index.js`{{open}}
+Open `astra-tik-tok/src/App.js`{{open}}
 
 Import the Header component we just created:
-<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="import Upload from './pages/Upload'">
-import Upload from './pages/Upload'
+<pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="prepend">
 import Header from './components/Header'
 </pre>
 
@@ -77,8 +81,9 @@ import Header from './components/Header'
 import './App.css';
 </pre>
 
+Open `astra-tik-tok/src/App.js`{{open}}
 Add a Header to the App component, under the <HashRouter> tag.
-<pre class="file" data-filename="astra-tik-toc/src/index.js" data-target="insert"  data-marker="<HashRouter>">
+<pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="insert"  data-marker="<HashRouter>">
 &lt;HashRouter&gt;
        &lt;Header /&gt;
 </pre>
@@ -91,7 +96,7 @@ Open `astra-tik-tok/src/pages/Home.js`{{open}}
 
 *import FollowersColumn* - Add a line at the top of Home.js to import the FollowersColumn component
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="prepend">
-import FollowersColumn from '../pages/FollowersColumn'
+import FollowersColumn from '../components/FollowersColumn'
 </pre>
 
 *Add a Container <div>* - Your home page layout will be easier to manage if you put the content in a container div.
@@ -122,7 +127,7 @@ import FollowersColumn from '../pages/FollowersColumn'
 
 If any of those didn't work, you can create it from scratch.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="replace">
-import FollowersColumn from '../pages/FollowersColumn'
+import FollowersColumn from '../components/FollowersColumn'
 
 const Home = () => {
   return (
