@@ -6,7 +6,7 @@ Routing is the ability to move between different parts of an application when a 
 **Objectives**
 1. Add routing with react-router-dom
 2. Create a Home and Upload component page
-3. Update index.js with routes for components and the App definition
+3. Update index.js with routes for components
 
 ---
 
@@ -17,7 +17,7 @@ Install the react-router-dom package:
 
 Open `astra-tik-tok/src/App.js`{{open}}
 
-Add the following import statement to your index.js file.
+Add the following import statement to your App.js file.
 <pre class="file" data-filename="astra-tik-tok/src/App.js" data-target="prepend">import { HashRouter, Route , Switch} from 'react-router-dom'</pre>
 
 # 2. Create component pages
@@ -84,12 +84,12 @@ import { HashRouter, Route , Switch} from 'react-router-dom'
 import './App.css'
 const App = () => {
   return (
-    <HashRouter>
-    <Switch>
-      <Route path= "/upload" component={Upload}/>
-      <Route path= "/" component={Home}/>
-    </Switch>
-  </HashRouter>
+    &lt;HashRouter&gt;
+    &lt;Switch&gt;
+      &lt;Route path= "/upload" component={Upload}/&gt;
+      &lt;Route path= "/" component={Home}/&gt;
+    &lt;/Switch&gt;
+  &lt;/HashRouter&gt;
   );
 }
 
