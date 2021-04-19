@@ -55,12 +55,6 @@ const Upload = () => {
 export default Upload
 </pre>
 
-## Update index.js
-
-It's time to make some changes to index.js.  Instead of keeping the App component in its own file we'll bring it into here for easier maintenance.
-
-In the index.js file, change the imports.  This will add imports for Home and Upload.  I'll go over that after you make the change.
-
 ## Add structure to App.js
 
 It's time to get App.js ready to do some real work.
