@@ -12,7 +12,7 @@ First, create a directory for netlify functions.  The default is 'functions' so 
 
 There is a little more syntax to be added to support Netlify functions. Each JavaScript file to be deployed as a synchronous, serverless Lambda function must export a handler method with the following general syntax. Check out the [Netlify docs on Synchronous function format](https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format) for an in-depth explanation of how this works.
 
-For now, open {{Open `astra-tik-tok/src/functions/addData.js`{{open}}}}
+For now, open Open `astra-tik-tok/src/functions/addData.js`{{open}}}}
 
 Let's populate it with some data.  We want to use the @astrajs/collections library to create an astra client
 
@@ -32,6 +32,42 @@ exports.handler = async function (event, context, callback) {
     .namespace(process.env.ASTRA_DB_KEYSPACE)
     .collection(collection)
 }    
+</pre>
+
+Now, we need to build a configuration file to tell netlify exactly what to do.
+
+Create it: `touch netlify.toml`{{execute}}
+
+Open it: `astra-tik-tok/netlify.toml`{{open}}
+
+<pre class="file" data-filename="astra-tik-toc/netlify.toml" data-target="replace">
+[build]
+command = "npm run build"
+functions = "functions"
+publish = "build"
+</pre>
+
+Click back to `astra-tik-tok/src/functions/addData.js`{{open}}
+
+<pre class="file" data-filename="astra-tik-toc/functions/addData.js" data-target="insert" data-marker=".collection(collection)
+">
+.collection(collection)
+
+  try {
+      await posts.create("a post", {
+          title: "my first post",
+      })
+
+      return {
+          statusCode: 200,
+      }
+  } catch (e) {
+      console.error(e);
+      return {
+          statusCode: 500,
+          body: JSON.stringify(e),
+      }
+  }
 </pre>
 
 
