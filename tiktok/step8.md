@@ -24,8 +24,7 @@ exports.handler = async function (event, context, callback) {
     .namespace(process.env.ASTRA_DB_KEYSPACE)
     .collection(collection)
 
-    const res = fs.readFile('data.json')
-    console.log(res)
+    const data = JSON.parse(fs.readFile('data.json'))
 
   try {
         for (let i = 0; i < data.length; i++) {
