@@ -31,10 +31,10 @@ npm install axios @astrajs/collections`{{execute}}
 In order to work with netlify, the netlify system needs to be able to see your code, so you will create a new github repository for this purpose.  You'll use the command line interface to make it easy.
 
 First, install the gh tool:
-`snap install gh`
+`snap install gh`{{execute}}
 
 Authenticate with the github service:
-`gh auth login`
+`gh auth login`{{execute}}
 
 You need to create an authentication token at [github](https://github.com/settings/tokens).
 You want to use the following answers:
@@ -46,6 +46,8 @@ You want to use the following answers:
 The minimum required scopes are 'repo', 'read:org', 'workflow'.
 
 Paste it into the prompt for the login, and you should be ready to go.
+
+`gh repo create`{{execute}}
 
 ## 4. Login to Netlify
 
