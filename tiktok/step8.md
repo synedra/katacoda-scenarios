@@ -46,3 +46,14 @@ exports.handler = async function (event, context, callback) {
 }   
 </pre> 
 
+Visit the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/addData">addData endpoint.</a>
+
+Then check the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/post">post endpoint</a> to see the added data.
+
+
+It's time to put some real content in there!  First, do a github checkpoint for safety.
+
+`git commit -a -m "Step 8 final"`{{execute}}
+
+`git tag -a STEP7 -m "Step 8 final"`{{execute}}
+
