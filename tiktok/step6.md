@@ -36,16 +36,24 @@ First, install the gh tool:
 Authenticate with the github service:
 `gh auth login`{{execute}}
 
-You need to create an authentication token at [github](https://github.com/settings/tokens).
 You want to use the following answers:
 * github.com
 * SSH
 * Yes, create a key
 * Your token from [github](https://github.com/settings/tokens)
-
-The minimum required scopes are 'repo', 'read:org', 'workflow'.
+  * The minimum required scopes are 'repo', 'read:org', 'admin:public-key'.
 
 Paste it into the prompt for the login, and you should be ready to go.
+
+Now move the new ssh file over the existing one.  The github command will have told you where the new ssh key is, and the easiest way to get it in place is to copy it back.  So, for instance, on my system this command is:
+
+`cp /root/snap/gh/354/.ssh/id_ed25519 /root/.ssh/id_rsa`
+
+Note that I am *not* copying the .pub from the original path.  You want the private key, not the public one.
+
+You also need to change the ownership of the file:
+
+`chown root.root /root/.ssh/id_rsa`{{execute}}
 
 `gh repo create`{{execute}}
 
@@ -56,6 +64,16 @@ Login to the Netlify service:
 `npx netlify login`
 
 Browse to the [Netlify Site](https://netlify.com).
+
+* Click "New site from Github"
+* Select Github
+* Choose your astra-tik-tok repository
+* Deploy site
+* Wait for it to be complete, then visit the site
+
+Make sure it matches up with what you see locally.  You're ready to start working with serverless Netlify functions now!
+
+
 
 
 

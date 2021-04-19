@@ -73,7 +73,7 @@ Now, the display you see there is the default react App component, but we want t
 
 # 3. Remove App Component Contents
 
-Clear out the unneeded stuff in your App.js file.  After you click the 'Copy to Editor' button your server should reload and going to the <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">site</a> now will have an empty page.
+Clear out the unneeded stuff in your `astra-tik-tok/src/App.js`{{open}} file.  After you click the 'Copy to Editor' button your server should reload and going to the <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">site</a> now will have an empty page.
 
 <pre class="file" data-filename="root/astra-tik-tok/src/App.js" data-target="replace">
 import './App.css'
@@ -127,6 +127,8 @@ Once you've made the change, go ahead and <a href="https://[[HOST_SUBDOMAIN]]-30
 Commit the changes to your repository, and tag the current commit for easier retrieval later 
 
 `echo "adding terminal"`{{execute T2}}
+
+Give it a moment to present you with a prompt, then do the following commands:
 
 `cd astra-tik-tok`{{execute T2}}
 

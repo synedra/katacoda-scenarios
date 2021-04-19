@@ -6,7 +6,7 @@ Routing is the ability to move between different parts of an application when a 
 **Objectives**
 1. Add routing with react-router-dom
 2. Create a Home and Upload component page
-3. Update index.js with routes for components
+3. Update App.js with routes for components
 
 ---
 
@@ -65,6 +65,8 @@ You'll be making a few changes with this:
 * In the <Hashrouter>, inserting a Switch component to direct queries to the right place
 * Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match "wins" so you can land in some frustration if you don't keep this in mind.
 
+Open `astra-tik-tok/src/App.js`{{open}} to get started.
+
 <pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="replace">
 import { HashRouter, Route , Switch} from 'react-router-dom'
 import Home from './pages/Home'
@@ -91,4 +93,13 @@ Go ahead and <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environm
 
 
 Awesome!  We don't have any content yet, so the pages aren't much to look at.  Let's take care of that next!
+
+Before we move on, go ahead and commit your step 4 work:
+
+`git add src/pages`{{execute}}
+
+`git commit -a -m "Step 4 final"`{{execute}}
+
+`git tag -a STEP3 -m "Step 4 final"`{{execute}}
+
 
