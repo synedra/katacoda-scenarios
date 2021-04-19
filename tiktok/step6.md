@@ -72,6 +72,8 @@ Login to the Netlify service:
 
 `npx netlify login`{{execute}}
 
+Copy that long URL into your browser, and authorize the app.
+
 Browse to the [Netlify Site](https://netlify.com).
 
 * Click "New site from Github"
