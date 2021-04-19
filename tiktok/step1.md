@@ -25,25 +25,25 @@ _ahem...for those of you familiar with Apache Cassandra, yes, I just said you co
 <details>
   <summary>If you are new to Astra</summary>
 
-The `ASTRA` service is available at url [https://astra.datastax.com](https://dtsx.io/workshop). `ASTRA` is the simplest way to run Cassandra with zero operations at all - just push the button and get your cluster. `Astra` offers $25 credit/month and requires no credit card to setup.  That $25 gives you a lot of storage space and transactions, and you have no worries of being accidentally charged.
+  The `ASTRA` service is available at url [https://astra.datastax.com](https://dtsx.io/workshop). `ASTRA` is the simplest way to run Cassandra with zero operations at all - just push the button and get your cluster. `Astra` offers $25 credit/month and requires no credit card to setup.  That $25 gives you a lot of storage space and transactions, and you have no worries of being accidentally charged.
 
-### ✅ Step 1a. Use the dialogs to create an account
-You can use your `Github`, `Google` accounts or register with an `email`.
+  ### ✅ Step 1a. Use the dialogs to create an account
+  You can use your `Github`, `Google` accounts or register with an `email`.
 
-Make sure to chose a password with minimum 8 characters, containing upper and lowercase letters, at least one number and special character
-- [Registration Page](https://dtsx.io/workshop)
+  Make sure to chose a password with minimum 8 characters, containing upper and lowercase letters, at least one number and special character
+  - [Registration Page](https://dtsx.io/workshop)
 
-![Registration Image](https://github.com/DataStax-Examples/battlestax/blob/master/tutorial/login-1000.png?raw=true)
+  ![Registration Image](https://github.com/DataStax-Examples/battlestax/blob/master/tutorial/login-1000.png?raw=true)
 
-You will automatically be asked to create a database.
+  You will automatically be asked to create a database.
 
-✅ **Choose your plan:** The "Pay as You Go" plan gives you $25/month of traffic and storage, and does not require a credit card - if you get close to the limit we'll let you know.  Click "Get Started."
+  ✅ **Choose your plan:** The "Pay as You Go" plan gives you $25/month of traffic and storage, and does not require a credit card - if you get close to the limit we'll let you know.  Click "Get Started."
 
-✅ **Name your Database:** With our new serverless plan you can have as many databases as you need.  For this workshop, use "workshops" as the database name and "tiktok" as the Keyspace name.  
+  ✅ **Name your Database:** With our new serverless plan you can have as many databases as you need.  For this workshop, use "workshops" as the database name and "tiktok" as the Keyspace name.  
 
-✅ 4. **Select a cloud provider:** You can use either GCP or AWS.  Chose a region that's geographically close to you.
+  ✅ 4. **Select a cloud provider:** You can use either GCP or AWS.  Chose a region that's geographically close to you.
 
-✅ 5. **Click `Create Database`**
+  ✅ 5. **Click `Create Database`**
 </details>
 
 <details>

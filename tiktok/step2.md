@@ -9,7 +9,6 @@ In this step, we will:
 ---
 
 # 1. Prepare the environment
-Change into the setup directory.
 
 Run 'npm install' to get requirements.
 

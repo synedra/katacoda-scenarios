@@ -22,11 +22,8 @@ Create a git repository and store your code there.
 
 `git init`{{execute}}
 
-Copy the below command, paste it into the terminal and put your email in quotes then hit return.  It should end up looking like:
-`git config --global user.email "kirsten.hunter@datastax.com"`
 
-Here's the copy version:
-`git config --global user.email `{{copy}}
+`git config --global user.email "TikTok@example.com"`{{execute}}
 
 `git add -A`{{execute}}
 

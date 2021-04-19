@@ -130,7 +130,7 @@ async function setUpDatabase() {
 		let db = createDB();
 		database = await findWorkShopDatabase(true);
 	} else {
-		console.log(chalk.yellow('Found existing' + astra_database + ' database'));
+		console.log(chalk.yellow('Found existing ' + astra_database + ' database'));
 	}
 
 	dbID = database.id;
