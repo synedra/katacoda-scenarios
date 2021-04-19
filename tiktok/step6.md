@@ -45,23 +45,32 @@ You want to use the following answers:
 
 Paste it into the prompt for the login, and you should be ready to go.
 
-Now move the new ssh file over the existing one.  The github command will have told you where the new ssh key is, and the easiest way to get it in place is to copy it back.  So, for instance, on my system this command is:
+Now move the new ssh file over the existing one.  The github command will have told you where the new ssh key is, and the easiest way to get it in place is to copy it back.  So, for instance, on my system these commands are:
 
 `cp /root/snap/gh/354/.ssh/id_ed25519 /root/.ssh/id_rsa`
+`cp /root/snap/gh/354/.ssh/id_ed25519.pub /root/.ssh/id_rsa.pub`
 
-Note that I am *not* copying the .pub from the original path.  You want the private key, not the public one.
+Start up your ssh-agent:
+`eval "$(ssh-agent -s)"`{{execute}}
+
+Add the id_rsa to your chain
+`ssh-add ~/.ssh/id_rsa`
 
 You also need to change the ownership of the file:
 
-`chown root.root /root/.ssh/id_rsa`{{execute}}
+`chown root.root /root/.ssh/id_rsa*`{{execute}}
 
 `gh repo create`{{execute}}
+
+Take all of the default prompts here.  You may run into some trouble if you've already identified an origin or if the site already exists - you can remove the remotes and the remote repo and start again.
+
+You may get an error with the end of this command.  To make sure it's working, do a `git push origin master`{{execute}}
 
 ## 4. Login to Netlify
 
 Login to the Netlify service:
 
-`npx netlify login`
+`npx netlify login`{{execute}}
 
 Browse to the [Netlify Site](https://netlify.com).
 
