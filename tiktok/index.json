@@ -10,15 +10,15 @@
               {"file": "package.json", "target": "/root"},
               {"file": "data.json", "target": "/root"},
               {"file": "config.json", "target": "/root/.config/httpie"},
-              {"file": "components/Card.js", "target": "/step8/components"},
-              {"file": "components/MicroCard.js", "target": "/step8/components"},
-              {"file": "components/MiniCard.js", "target": "/step8/components"},
-              {"file": "components/FollowersColumn.js", "target": "/step8/components"},
+              {"file": "components/Card.js", "target": "/step9/components"},
+              {"file": "components/MicroCard.js", "target": "/step9/components"},
+              {"file": "components/MiniCard.js", "target": "/step9/components"},
+              {"file": "components/FollowersColumn.js", "target": "/step9/components"},
               {"file": "components/Header.js", "target": "/step8/components"},
-              {"file": "pages/Home.js", "target": "/step8/pages"},
-              {"file": "pages/Upload.js", "target": "/step8/pages"},
-              {"file": "App.css", "target": "/step8"},
-              {"file": "index.html", "target": "/step8"}
+              {"file": "pages/Home.js", "target": "/step9/pages"},
+              {"file": "pages/Upload.js", "target": "/step9/pages"},
+              {"file": "App.css", "target": "/step9"},
+              {"file": "index.html", "target": "/step9"}
               
             ]
         },
