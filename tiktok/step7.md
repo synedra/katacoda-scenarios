@@ -115,5 +115,7 @@ Now let's create a post:
   }
 </pre>
 
+Make sure that terminal 1 is using `netlify dev`{{execute}}
 
+Visit <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/addData">the addData endpoint.</a>
 
