@@ -18,7 +18,7 @@
               {"file": "pages/Home.js", "target": "/step8/pages"},
               {"file": "pages/Upload.js", "target": "/step8/pages"},
               {"file": "App.js", "target": "/step8"},
-              {"file": "index.html", "target": "/step8"},
+              {"file": "index.html", "target": "/step8"}
               
             ]
         },
