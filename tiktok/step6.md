@@ -82,7 +82,19 @@ Browse to the [Netlify Site](https://netlify.com).
 * Deploy site
 * Wait for it to be complete, then visit the site
 
-Make sure it matches up with what you see locally.  You're ready to start working with serverless Netlify functions now!
+Make sure the site from Netlify matches up with what you see <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">locally</a>.  
+
+A little red tape to finish linking everything up:
+
+`npx netlify link`{{execute}}
+
+Use the repo that you created and select the site to use.
+
+Now you need to upload your .env variables.
+
+`npx netlify env:import .env`{{execute}}
+
+You're ready to start working with serverless Netlify functions now!
 
 
 
