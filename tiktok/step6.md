@@ -7,7 +7,6 @@ In this step you will work with React Components to understand how they work, re
 2. Install modules
 3. Set up your netlify app with netlify-cli
 4. Add netlify serverless functions
-5. 
 
 
 ---
@@ -36,5 +35,26 @@ First, install the gh tool:
 
 Authenticate with the github service:
 `gh auth login`
+
+You need to create an authentication token at [github](https://github.com/settings/tokens).
+You want to use the following answers:
+* github.com
+* SSH
+* Yes, create a key
+* Your token from [github](https://github.com/settings/tokens)
+
+The minimum required scopes are 'repo', 'read:org', 'workflow'.
+
+Paste it into the prompt for the login, and you should be ready to go.
+
+## 4. Login to Netlify
+
+Login to the Netlify service:
+
+`npx netlify login`
+
+Browse to the [Netlify Site](https://netlify.com).
+
+
 
 
