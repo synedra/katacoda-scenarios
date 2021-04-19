@@ -8,6 +8,7 @@
           "host01": [
               {"file": "setup.js", "target": "/root", "chmod": "+x"},
               {"file": "package.json", "target": "/root"},
+              {"file": "data.json", "target": "/root"},
               {"file": "config.json", "target": "/root/.config/httpie"}
             ]
         },

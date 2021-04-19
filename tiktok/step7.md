@@ -12,7 +12,7 @@ First, create a directory for netlify functions.  The default is 'functions' so 
 
 There is a little more syntax to be added to support Netlify functions. Each JavaScript file to be deployed as a synchronous, serverless Lambda function must export a handler method with the following general syntax. Check out the [Netlify docs on Synchronous function format](https://docs.netlify.com/functions/build-with-javascript/#synchronous-function-format) for an in-depth explanation of how this works.
 
-For now, open Open `astra-tik-tok/src/functions/addData.js`{{open}}}}
+For now, open `astra-tik-tok/src/functions/addData.js`{{open}}
 
 Let's populate it with some data.  We want to use the @astrajs/collections library to create an astra client
 
@@ -115,7 +115,17 @@ Now let's create a post:
   }
 </pre>
 
-Make sure that terminal 1 is using `netlify dev`{{execute}}
+Make sure that terminal 1 is using `npx netlify dev`{{execute}}
 
-Visit <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/addData">the addData endpoint.</a>
+Visit the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/addData">addData endpoint.</a>
+
+Then check the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/post">addData endpoint.</a>
+
+Awesome, we're ready to start putting more data in the database.  First, do a github checkpoint for safety.
+
+`git add src/functions`{{execute}}
+
+`git commit -a -m "Step 6 final"`{{execute}}
+
+`git tag -a STEP6 -m "Step 6 final"`{{execute}}
 
