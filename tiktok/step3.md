@@ -67,7 +67,7 @@ In `astra-tik-tok/src/index.js`{{open}}, remove the following content
 Start up the application:
 `yarn start`{{execute}}
 
-Visit it <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">here</a>
+Wait for it to start up in the terminal, then visit it <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">here</a>
 
 Now, the display you see there is the default react App component, but we want to make our own.  Let's go ahead and slim it down to the basics.
 

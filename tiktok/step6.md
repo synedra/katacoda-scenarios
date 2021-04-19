@@ -54,7 +54,7 @@ Start up your ssh-agent:
 `eval "$(ssh-agent -s)"`{{execute}}
 
 Add the id_rsa to your chain
-`ssh-add ~/.ssh/id_rsa`
+`ssh-add ~/.ssh/id_rsa`{{execute}}
 
 You also need to change the ownership of the file:
 
@@ -64,7 +64,7 @@ You also need to change the ownership of the file:
 
 Take all of the default prompts here.  You may run into some trouble if you've already identified an origin or if the site already exists - you can remove the remotes and the remote repo and start again.
 
-You may get an error with the end of this command.  To make sure it's working, do a `git push origin master`{{execute}}
+You may get an incorrect error with the end of this command.  To make sure it's working, do a `git push origin master`{{execute}}
 
 ## 4. Login to Netlify
 

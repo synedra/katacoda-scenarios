@@ -113,8 +113,8 @@ import FollowersColumn from '../components/FollowersColumn'</pre>
 *Add suggested-box div* - create a place for a suggestion box to appear.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='<h1>Home</h1>'>
 &lt;h1&gt;Home&lt;/h1&gt;
-            &lt; /div &gt;
-            &lt;div className="suggested-box"&gt;</pre>
+     &lt; /div &gt;
+     &lt;div className="suggested-box"&gt;</pre>
 
 If any of those didn't work, you can create it from scratch.
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="replace">
@@ -177,4 +177,4 @@ Before you move, on, commit your changes to the repository:
 
 `git commit -a -m "Step 5 final"`{{execute}}
 
-`git tag -a STEP3 -m "Step 5 final"`{{execute}}
+`git tag -a STEP5 -m "Step 5 final"`{{execute}}

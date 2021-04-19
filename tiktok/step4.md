@@ -100,6 +100,6 @@ Before we move on, go ahead and commit your step 4 work:
 
 `git commit -a -m "Step 4 final"`{{execute}}
 
-`git tag -a STEP3 -m "Step 4 final"`{{execute}}
+`git tag -a STEP4 -m "Step 4 final"`{{execute}}
 
 
