@@ -3,4 +3,4 @@ In order to move on with the scenario, you need to have two environment files co
 * /root/.env
 
 If they are not set up correctly, please try the following:
-* `clear; node /root/setup/setup.js`{{execute}}
+* `clear; node /root/setup.js`{{execute}}

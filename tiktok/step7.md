@@ -95,7 +95,7 @@ exports.handler = async function (event, context, callback) {
 
 Now let's create a post:
 
-<pre class="file" data-filename="astra-tik-toc/functions/addData.js" data-target="insert" data-marker=".collection(collection)
+<pre class="file" data-filename="astra-tik-toc/functions/post.js" data-target="insert" data-marker=".collection(collection)
 ">
 .collection(collection)
 
@@ -119,7 +119,7 @@ Make sure that terminal 1 is using `npx netlify dev`{{execute}}
 
 Visit the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/addData">addData endpoint.</a>
 
-Then check the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/post">addData endpoint.</a>
+Then check the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/post">post endpoint.</a>
 
 You should see this:
 `{
@@ -132,7 +132,7 @@ Awesome, we're ready to start putting more data in the database.  First, do a gi
 
 `git add functions`{{execute}}
 
-`git commit -a -m "Step 6 final"`{{execute}}
+`git commit -a -m "Step 7 final"`{{execute}}
 
-`git tag -a STEP6 -m "Step 6 final"`{{execute}}
+`git tag -a STEP7 -m "Step 7 final"`{{execute}}
 

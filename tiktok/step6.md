@@ -54,12 +54,12 @@ Now move the new ssh file over the existing one.  The github command will have t
 Start up your ssh-agent:
 `eval "$(ssh-agent -s)"`{{execute}}
 
-Add the id_rsa to your chain
+Add the ssh file to your chain
 `ls ~/.ssh/id_* | grep -v pub | xargs ssh-add`{{execute}}
 
 You also need to change the ownership of the file:
 
-`chown root.root /root/.ssh/id_rsa*`{{execute}}
+`chown root.root /root/.ssh/id*`{{execute}}
 
 `gh repo create`{{execute}}
 
