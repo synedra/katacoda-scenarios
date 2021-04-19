@@ -9,7 +9,17 @@
               {"file": "setup.js", "target": "/root", "chmod": "+x"},
               {"file": "package.json", "target": "/root"},
               {"file": "data.json", "target": "/root"},
-              {"file": "config.json", "target": "/root/.config/httpie"}
+              {"file": "config.json", "target": "/root/.config/httpie"},
+              {"file": "components/Card.js", "target": "/step8/components"},
+              {"file": "components/MicroCard.js", "target": "/step8/components"},
+              {"file": "components/MiniCard.js", "target": "/step8/components"},
+              {"file": "pages/FollowersColumn.js", "target": "/step8/components"},
+              {"file": "pages/Header.js", "target": "/step8/components"},
+              {"file": "pages/Home.js", "target": "/step8/pages"},
+              {"file": "pages/Upload.js", "target": "/step8/pages"},
+              {"file": "App.js", "target": "/step8"},
+              {"file": "index.html", "target": "/step8"},
+              
             ]
         },
     "steps": [
