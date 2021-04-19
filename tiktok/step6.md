@@ -47,14 +47,15 @@ Paste it into the prompt for the login, and you should be ready to go.
 
 Now move the new ssh file over the existing one.  The github command will have told you where the new ssh key is, and the easiest way to get it in place is to copy it back.  So, for instance, on my system these commands are:
 
-`cp /root/snap/gh/354/.ssh/id_ed25519 /root/.ssh/id_rsa`
-`cp /root/snap/gh/354/.ssh/id_ed25519.pub /root/.ssh/id_rsa.pub`
+`find /root/snap/gh -type f -name id_\* -exec cp {} /root/.ssh/ \;`{{execute}}
+
+`ls /root/.ssh/id_* | grep -v pub | xargs chmod 400`{{execute}}
 
 Start up your ssh-agent:
 `eval "$(ssh-agent -s)"`{{execute}}
 
 Add the id_rsa to your chain
-`ssh-add ~/.ssh/id_rsa`{{execute}}
+`ls ~/.ssh/id_* | grep -v pub | xargs ssh-add`{{execute}}
 
 You also need to change the ownership of the file:
 
