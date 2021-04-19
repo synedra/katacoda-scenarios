@@ -70,4 +70,50 @@ Click back to `astra-tik-tok/src/functions/addData.js`{{open}}
   }
 </pre>
 
+Now let's populate post.js:
+
+Open it up: `astra-tik-tok/src/functions/post.js`{{open}}
+
+<pre class="file" data-filename="astra-tik-toc/functions/post.js" data-target="replace">
+const { createClient } = require("@astrajs/collections")
+
+const collection = 'posts'
+
+exports.handler = async function (event, context, callback) {
+  const astraClient = await createClient({
+       astraDatabaseId: process.env.ASTRA_DB_ID,
+       astraDatabaseRegion: process.env.ASTRA_DB_REGION,
+       applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,
+     });
+
+  const posts = astraClient
+    .namespace(process.env.ASTRA_DB_KEYSPACE)
+    .collection(collection)
+
+}
+</pre>
+
+Now let's create a post:
+
+<pre class="file" data-filename="astra-tik-toc/functions/addData.js" data-target="insert" data-marker=".collection(collection)
+">
+.collection(collection)
+
+  try {
+      const res = await posts.find({})
+
+      return {
+          statusCode: 200,
+          body: JSON.stringify(res, null, 4)
+      }
+  } catch (e) {
+      console.error(e);
+      return {
+          statusCode: 500,
+          body: JSON.stringify(e),
+      }
+  }
+</pre>
+
+
 
