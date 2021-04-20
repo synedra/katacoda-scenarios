@@ -24,7 +24,7 @@ exports.handler = async function (event, context, callback) {
     .namespace(process.env.ASTRA_DB_KEYSPACE)
     .collection(collection)
 
-    const data = JSON.parse(fs.readFile('data.json'))
+    const data = JSON.parse(fs.readFile('/root/data.json'))
 
   try {
         for (let i = 0; i < data.length; i++) {
@@ -41,8 +41,6 @@ exports.handler = async function (event, context, callback) {
             body: JSON.stringify(e),
         }
     }
-}
-
 }   
 </pre> 
 
