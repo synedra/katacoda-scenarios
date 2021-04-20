@@ -95,7 +95,10 @@ Now there is data coming in and out of Astra.  But you’ll want to sort your po
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="return">
 
   if (users) {
-  descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)
+    descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)
+    const following = users.filter(user => user.is_followed)
+    const descendingFollowing = following.sort((a, b) => a.likes < b.likes ? 1 : -1)
+    topFiveFollowing = descendingFollowing.slice(0, 5)
   }
 
   return
@@ -103,20 +106,22 @@ Now there is data coming in and out of Astra.  But you’ll want to sort your po
 
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="const Home = () => {">
 const Home = () => {    
-    let descendingUsers
+  const [users, setUsers] = useState(null)
+  let descendingUsers
+  let topFiveFollowing
 </pre>
 
 With the users now in descending order, go ahead and map them. First, make sure that the elements only render if we get the ordered data back from the database.
 
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="return">
 return (
-  <>
+  &lt;&gt;
   {descendingUsers && (
 </pre>
 
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="</>">
   )}
-  </>
+  &lt;/&gt;
 </pre>
 
 Then in the feed, start mapping onto a Card component. Once again, use descendingUsers. Use the map()function to map each descendingUser (singular) and its index onto a Card component. 
@@ -124,10 +129,10 @@ Then in the feed, start mapping onto a Card component. Once again, use descendin
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="<div className='feed'>">
 <div className='feed'>
       {descendingUsers.map((descendingUser, index) => (
-          <Card
+          &lt;Card
             key={index}
             user={descendingUser}
-          />
+          /&gt;
         ))}
 </pre>
 
@@ -138,8 +143,6 @@ Open it up: `astra-tik-tok/src/components/Card.js`{{open}}
 The user needs to be passed in into Card.js. 
 
 <pre class="file" data-filename="astra-tik-toc/src/components/Card.js" data-target="insert" data-marker="const Card = () => {">
-const Card = () => {
-
 const Card = ({ user }) => {
   console.log('user', user)
 </pre>
@@ -150,27 +153,7 @@ Once again, visit the Visit the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATAC
 
 The next thing to do is to  populate the "Following" and "Suggested Accounts" side columns as well. This means working on the MiniCard and MicroCard, which is very similar to what you have just done with the Card component.
 
-First, though, open astra-tik-tok/src/pages/Home.js`{{open}} back up
+First, though, open `astra-tik-tok/src/pages/Home.js`{{open}} back up
 
-<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)">
-descendingUsers = users.sort((a, b) => a.id < b.id ? 1 : -1)
-const following = users.filter(user => user.is_followed)
-</pre>
+Now that you have the people that you are following stored in the const following, you will need to sort them by descending order. The descendingFollowing constant uses a similar syntax to what was used for descendingUsers, except “likes”, as the users with the most likes should be the ones popping up as suggestions.
 
-Now that you have the people that you are following stored in the const following, you will need to sort them by descending order. Create the descendingFollowing constant by using a similar syntax to what was used for descendingUsers, except “likes”, as the users with the most likes should be the ones popping up as suggestions.
-
-<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="const following = users.filter(user => user.is_followed)">
-const following = users.filter(user => user.is_followed)
-const descendingFollowing = following.sort((a, b) =&gt; a.likes &lt; b.likes ? 1 : -1)
-</pre
-
-<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker='const descendingFollowing = following.sort((a, b) =&gt; a.likes &lt; b.likes ? 1 : -1'>
-
-const descendingFollowing = following.sort((a, b) =&gt; a.likes &lt; b.likes ? 1 : -1)
-  topFiveFollowing = descendingFollowing.slice(0, 5)
-</pre>
-
-<pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="insert" data-marker="let descendingUsers">
-let descendingUsers   
-    let topFiveFollowing
-</pre>
