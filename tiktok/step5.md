@@ -76,7 +76,6 @@ Import the Header component we just created:
 <pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="prepend">
 import Header from './components/Header'</pre>
 
-Open `astra-tik-tok/src/App.js`{{open}}
 Add a Header to the App component, under the <HashRouter> tag.
 <pre class="file" data-filename="astra-tik-toc/src/App.js" data-target="insert"  data-marker="<HashRouter>">
 &lt;HashRouter&gt;

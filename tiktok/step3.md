@@ -124,7 +124,7 @@ Once you've made the change, go ahead and <a href="https://[[HOST_SUBDOMAIN]]-30
 
 # 4. Commit to git
 
-Commit the changes to your repository, and tag the current commit for easier retrieval later 
+Commit the changes to your repository, and tag the current commit for easier retrieval later.  First though, we need another terminal window to run commands in, since the first terminal tab is running the application. 
 
 `echo "adding terminal"`{{execute T2}}
 
