@@ -4,10 +4,10 @@ Now you're going to put some fake data into the system to see how it works.
 
 ## 1. Fetch the data file
 
-In `astra-tik-tok/functions/addData.js`{{open}} we want to pull in data from the 'data.json' file in your /root directory.
+In `astra-tik-tok/functions/addData.js`{{open}} we want to pull in data from the 'data.json' file in your /root directory.  Let's just write the addData.js file from scratch.
 
 <pre class="file" data-filename="astra-tik-toc/functions/addData.js" data-target="replace">
-
+const fs = import('fs')
 const { createClient } = require("@astrajs/collections")
 
 const collection = 'posts'
@@ -24,8 +24,8 @@ exports.handler = async function (event, context, callback) {
     .namespace(process.env.ASTRA_DB_KEYSPACE)
     .collection(collection)
 
-    const data = JSON.parse(fs.readFile('/root/data.json'))
-
+  const data = JSON.parse(fs.readFileSync('/root/data.json'))
+    
   try {
         for (let i = 0; i < data.length; i++) {
           await posts.create(data[i].id.toString(), data[i])
