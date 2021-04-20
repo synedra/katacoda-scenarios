@@ -20,9 +20,8 @@ Did everything load up ok?  Great!  Let's connect everything up.
 
 Open it up: `astra-tik-tok/functions/post.js`{{open}}
 
-<pre class="file" data-filename="astra-tik-toc/functions/post.js" data-target="insert" data-marker="statusCode: 200">
-statusCode: 200,
-    body: JSON.stringify(Object.keys(res).map((i) => res[i]), null, 4)
+<pre class="file" data-filename="astra-tik-toc/functions/post.js" data-target="insert" data-marker="JSON.stringify(res, null, 4)">
+JSON.stringify(Object.keys(res).map((i) => res[i]), null, 4)
 </pre>
 
 Check the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/.netlify/functions/post">post endpoint</a> to see the updated return objects.
@@ -34,6 +33,7 @@ Open it up: `astra-tik-tok/src/pages/Home.js`{{open}}
 First let's get all our imports in place.
 
 <pre class="file" data-filename="astra-tik-toc/src/pages/Home.js" data-target="prepend">
+import React, { useState, useEffect } from 'react'
 import Card from '../components/Card'
 import MiniCard from '../components/MiniCard'
 import axios from 'axios'
@@ -74,7 +74,7 @@ Since data can be added to the database with this Netlify function, you will nee
 
 Use an Effect hook and invoke addData and fetchData, and return an empty array for now.
 
-Check <a href="https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/">the site</a> in your browser.
+Check <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATACODA_HOST]].environments.katacoda.com/">the site</a> in your browser.
 
 ## 4. Add Sorting Logic
 
@@ -139,7 +139,7 @@ Once again, visit the Visit the <a href="https://[[HOST_SUBDOMAIN]]-8888-[[KATAC
 
 The next thing to do is to  populate the "Following" and "Suggested Accounts" side columns as well. This means working on the MiniCard and MicroCard, which is very similar to what you have just done with the Card component.
 
-First, though, open `astra-tik-tok/src/components/Card.js.js`{{open}} 
+First, though, open `astra-tik-tok/src/components/Card.js`{{open}} 
 
 Now that you have the people that you are following stored in the const following, you will need to sort them by descending order. The descendingFollowing constant uses a similar syntax to what was used for descendingUsers, except “likes”, as the users with the most likes should be the ones popping up as suggestions.
 
@@ -149,4 +149,9 @@ Now we need to make a change to `astra-tik-tok/src/components/FollowersColumn.js
 const Card = ({ user }) => {
   console.log('user', user)
 </pre>
+
+## 5. Update FollowersColumn.js
+
+Open it up: `astra-tik-tok/src/components/FollowersColumn.js`{{open}}
+
 
