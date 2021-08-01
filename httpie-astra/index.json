@@ -4,6 +4,12 @@
   "difficulty": "Beginner",
   "time": "20 minutes",
   "details": {
+    "assets": {
+      "host01" : [
+        {"file": "package.json", "target": "/root"},
+        {"file": "config.json", "target": "/root/.config/httpie"}
+      ]
+    },
     "steps": [
       {
         "title": "Step 1",
