@@ -49,8 +49,13 @@ In this quick scenario, you'll:
 <img width="1331" alt="image" src="https://user-images.githubusercontent.com/77410784/127785869-21d5eaa4-2355-4dde-9629-1750f98ac536.png">
 
 Stargate is an open source engine running on top of Cassandra.  It exposes HTTP APIs to give your developers to interact with the data without using CQL.
-**🔵 REST
-**🔵 GraphQL
-**🔵 Document
+
+**🔵 REST**
+
+**🔵 GraphQL**
+
+**🔵 Document**
+
+---
 
 #### Ok, let's move on and get into our first lab, where we get our Astra instance.

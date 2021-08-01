@@ -61,8 +61,8 @@ It's time to get App.js ready to do some real work.
 
 You'll be making a few changes with this:
 * Importing the HashRouter, Route and Switch components
-* Adding a <Hashrouter> at the top of your App component
-* In the <Hashrouter>, inserting a Switch component to direct queries to the right place
+* Adding a &lt;Hashrouter&gt; at the top of your App component
+* In the &lt;Hashrouter&gt;, inserting a Switch component to direct queries to the right place
 * Setting up routes for the home and upload pages.  Note you always want to have more specific routes (like /upload) first, then your more general matches later.  The first match "wins" so you can land in some frustration if you don't keep this in mind.
 
 Open `astra-tik-tok/src/App.js`{{open}} to get started.
