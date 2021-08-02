@@ -8,6 +8,14 @@ In this step, we will:
 
 ---
 
+# 0. Setup npm modules
+`sudo npm install`{{execute}}
+`sudo npm install -g astra-setup`{{execute}}
+```
+`npm bin`/astra-setup
+```
+
+
 # 1. Install HTTPie
 HTTPie is an excellent API CLI tool, which we've extended to understand the astra authentication model.  
 
