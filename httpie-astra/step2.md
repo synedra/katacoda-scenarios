@@ -9,9 +9,15 @@ In this step, we will:
 ---
 
 # 0. Setup npm modules
+
+Make sure you've got current versions.
+
 * `sudo npm install`{{execute}}
+
+Install the astra-setup npm package.
+
 * `sudo npm install --unsafe-perm -g astra-setup`{{execute}}
-* `npm install node-jq@latest`{{execute}}
+
 
 
 # 1. Install HTTPie
@@ -21,7 +27,7 @@ HTTPie is an excellent API CLI tool, which we've extended to understand the astr
 
 ## 2. Set Up Credentials
 
-`/usr/bin/astra-setup`{{execute}}
+`/usr/bin/astra-setup stargate workshop`{{execute}}
 
 It's waiting for you to paste in your variables, so you'll need to get those.
 
