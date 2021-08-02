@@ -10,10 +10,9 @@ In this step, we will:
 
 # 0. Setup npm modules
 `sudo npm install`{{execute}}
-`sudo npm install -g astra-setup`{{execute}}
-```
-`npm bin`/astra-setup
-```
+`sudo npm install --unsafe-perm -g astra-setup`{{execute}}
+`npm install node-jq@latest`{{execute}}
+`/usr/bin/astra-setup`{{execute}}
 
 
 # 1. Install HTTPie
