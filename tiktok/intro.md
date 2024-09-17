@@ -3,6 +3,10 @@ In this scenario, you'll:
 * Create a serverless database
 * Build a React Application Tiktok Clone
 
+![tiktok](https://raw.githubusercontent.com/DataStax-Examples/astra-tik-tok/master/screenshot.jpg)
+
+[📹 🎉 Check this video and see the application in action !](https://imgur.com/q5kRCur.mp4)
+
 ---
 
 # 📚 Datastax: Cassandra, Astra and Stargate
